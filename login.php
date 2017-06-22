@@ -1,8 +1,8 @@
 <?php
 	
-	$username = $_POST["username"];
+	$username = $_POST["name"];
 	$pass = $_POST["pass"];
-	$servername = "127.0.0.1";
+	$servername = "70.77.112.86";
 	$username = "root";
 	$db = "sct";
 
