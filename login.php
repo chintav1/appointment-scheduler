@@ -2,7 +2,7 @@
 	
 	$username = $_POST["username"];
 	$pass = $_POST["pass"];
-	$servername = "70.77.112.86";
+	$servername = "127.0.0.1";
 	$username = "root";
 	$db = "sct";
 
@@ -10,7 +10,7 @@
 	if ($conn->connect_error) {
 		echo "Connection Error";
 	}
-
+	echo "Welcome to the database";
 	$sql = "INSERT INTO login (username, pass) VALUES ('". $username."','". $pass ."')"
 
 
