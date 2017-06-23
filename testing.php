@@ -1,5 +1,5 @@
 <?php
-echo exec('start chrome');
+echo exec("script.bat");
 
 
 
