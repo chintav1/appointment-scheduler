@@ -2,9 +2,7 @@
 
 <body>
 
-<form action="login.php" method="post">
-   Name: <input type="text" name="name"><br>
-   Password: <input type="password" name="pass"><br>
+<form action="register.php" method="post">
    <input type="submit" value="Register">
 </form>
 
