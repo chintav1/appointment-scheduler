@@ -13,7 +13,7 @@
 		echo "Connection Error";
 	}
 	echo "Welcome to the database";
-	$sql = "INSERT INTO login (username, pass) VALUES ('". $username."','". $pass ."')"
+	$sql = "INSERT INTO login (username, pass) VALUES ('". $username."','". $pass ."')";
 
 
 ?>
