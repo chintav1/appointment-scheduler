@@ -1,13 +1,14 @@
 <html>
 
 	<body>
-
+		<p align = "center">What would you like to do?</p>
+		
 		<form action="register.php" method="post">
-   			<input type="submit" value="Register">
+   			<p align = "center"><input type="submit" value="Register"></p>
 		</form>
 
 		<form action="registerpage.php" method="post">
-   			<input type="submit" value="Login">
+   			<p align = "center"><input type="submit" value="Login"></p>
 		</form>
 
 	</body>
