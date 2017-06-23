@@ -3,19 +3,27 @@
 <?php
 
 	$username = $_POST["name"];
-	$pass = $_POST["pass"];
+	$password = $_POST["pass"];
 	$servername = "127.0.0.1";
-	$username = "root";
+	$dbusername = "root";
 	$db = "sct";
 
-	$conn = mysqli_connect($servername, $username,"", $db);
+	$conn = mysqli_connect($servername, $dbusername,"", $db);
 	if ($conn->connect_error) {
 		echo "Connection Error";
 	}
-	
-	$sql = "INSERT INTO login (username, pass) VALUES ('". $username."','". $pass ."')";
-	
-	echo "Welcome to the database";
+
+	$sql = "INSERT INTO login (username, pass) VALUES ('$username','$password')";
+
+	if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+	}
+	else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+	}
+
+$conn->close();
+
 ?>
 </body>
 </html>
