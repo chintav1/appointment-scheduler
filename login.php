@@ -12,10 +12,10 @@
 	if ($conn->connect_error) {
 		echo "Connection Error";
 	}
-	echo "Welcome to the database";
+	
 	$sql = "INSERT INTO login (username, pass) VALUES ('". $username."','". $pass ."')";
-
-
+	
+	echo "Welcome to the database";
 ?>
 </body>
 </html>
