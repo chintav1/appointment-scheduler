@@ -1,12 +1,14 @@
+<html><body>
+
 <?php
-	
+
 	$username = $_POST["name"];
 	$pass = $_POST["pass"];
 	$servername = "127.0.0.1";
 	$username = "root";
 	$db = "sct";
 
-	$conn = mysqli_connect($servername, $username, $db);
+	$conn = mysqli_connect($servername, $username,"", $db);
 	if ($conn->connect_error) {
 		echo "Connection Error";
 	}
@@ -15,3 +17,5 @@
 
 
 ?>
+</body>
+</html><?php
