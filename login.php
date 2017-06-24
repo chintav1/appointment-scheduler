@@ -28,6 +28,7 @@ $conn->close();
 
 	<script>
 		<link rel="stylesheet" type="text/css" href="schedules/timetable.php" />
+		break;
 	</script>
 	
 
