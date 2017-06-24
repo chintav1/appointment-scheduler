@@ -15,8 +15,8 @@
 
 	$sql = "SELECT username, pass FROM login HAVING ((username = $username) AND (pass = $password))";
 	$result = $conn->query($sql);
-
-	if($result -> num_rows > 0) {
+	$row = mysql_fetch_array($result);
+	if($row -> num_rows > 0) {
     	echo "Welcome, $username";
 	}
 
