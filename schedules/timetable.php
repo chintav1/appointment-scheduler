@@ -85,63 +85,7 @@
 							<td>31</td>
 
 						</tr>
-						<tr>
-							<th>11:00</th>
-							<td>27</td>
-							<td>55</td>
-							<td>97</td>
-							<td>52</td>
-							<td>19</td>
-						</tr>
-						<tr>
-							<th>12:00</th>
-							<td>36</td>
-							<td>68</td>
-							<td>89</td>
-							<td>78</td>
-							<td>60</td>
-						</tr>
-						<tr>
-							<th>13:00</th>
-							<td>95</td>
-							<td>46</td>
-							<td>62</td>
-							<td>24</td>
-							<td>14</td>
-						</tr>
-						<tr>
-							<th>14:00</th>
-							<td>19</td>
-							<td>66</td>
-							<td>31</td>
-							<td>99</td>
-							<td>77</td>
-						</tr>
-						<tr>
-							<th>15:00</th>
-							<td>57</td>
-							<td>15</td>
-							<td>57</td>
-							<td>9</td>
-							<td>11</td>
-						</tr>
-						<tr>
-							<th>16:00</th>
-							<td>69</td>
-							<td>46</td>
-							<td>16</td>
-							<td>33</td>
-							<td>85</td>
-						</tr>
-						<tr>
-							<th>17:00</th>
-							<td>18</td>
-							<td>93</td>
-							<td>84</td>
-							<td>57</td>
-							<td>35</td>
-						</tr>
-
+						
 					</tbody>
 				</table>
 
