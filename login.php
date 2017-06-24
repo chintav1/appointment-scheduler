@@ -17,14 +17,18 @@
 	
 	$result = mysqli_query($conn, $sql);
 	$num_rows = mysqli_num_rows($result);
+	
 	if($num_rows > 0) {
     	echo "Welcome, $username";
-   		die();
+
 	}
+	?>
 
 $conn->close();
 
-?>
+	<script>
+		<link rel="stylesheet" type="text/css" href="schedules/timetable.php" />
+	</script>
 	
 
 	<!--Re-enter if credentials are wrong-->
