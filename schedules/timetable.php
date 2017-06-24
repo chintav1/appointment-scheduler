@@ -32,8 +32,9 @@
 				</nav> -->
 			</header>
 			<div class="component">
+
 				<h2>Change Date</h2>
-				
+
 				<table>
 					<thead>
 						<tr>
@@ -46,71 +47,45 @@
 						</tr>
 					</thead>
 					<tbody>
+						<?php
+						$servername = "127.0.0.1";
+						$dbusername = "root";
+						$db = "sct";
+						$opentimeslot = ["10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00"];
+
+						$conn = mysqli_connect($servername, $dbusername,"", $db);
+						if ($conn->connect_error) {
+							echo "Connection Error";
+						}
+// get the name of the doctor that is on schedule this date and time
+
+			            foreach ($opentimeslot as $atime ) {
+
+			            ?>
+			                <tr>
+								<th><?php echo $atime;?></th>
+
+
+
+
+
+
+
+
+							</tr>
+			            <?php
+			            }
+			            ?>
 						<tr>
 							<th>10:00</th>
-							<td>52</td>
+							<td><button type="button">a doctor name<button></td>
 							<td>40</td>
 							<td>9</td>
 							<td>47</td>
 							<td>31</td>
-						</tr>
-						<tr>
-							<th>11:00</th>
-							<td>27</td>
-							<td>55</td>
-							<td>97</td>
-							<td>52</td>
-							<td>19</td>
-						</tr>
-						<tr>
-							<th>12:00</th>
-							<td>36</td>
-							<td>68</td>
-							<td>89</td>
-							<td>78</td>
-							<td>60</td>
-						</tr>
-						<tr>
-							<th>13:00</th>
-							<td>95</td>
-							<td>46</td>
-							<td>62</td>
-							<td>24</td>
-							<td>14</td>
-						</tr>
-						<tr>
-							<th>14:00</th>
-							<td>19</td>
-							<td>66</td>
-							<td>31</td>
-							<td>99</td>
-							<td>77</td>
-						</tr>
-						<tr>
-							<th>15:00</th>
-							<td>57</td>
-							<td>15</td>
-							<td>57</td>
-							<td>9</td>
-							<td>11</td>
-						</tr>
-						<tr>
-							<th>16:00</th>
-							<td>69</td>
-							<td>46</td>
-							<td>16</td>
-							<td>33</td>
-							<td>85</td>
-						</tr>
-						<tr>
-							<th>17:00</th>
-							<td>18</td>
-							<td>93</td>
-							<td>84</td>
-							<td>57</td>
-							<td>35</td>
-						</tr>
 
+						</tr>
+						
 					</tbody>
 				</table>
 
