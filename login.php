@@ -13,10 +13,10 @@
 		echo "Connection Error";
 	}
 
-	$sql = "SELECT username, pass FROM login WHERE ((username = $username) AND (pass = $password))";
+	$sql = "SELECT username, pass FROM login WHERE ((username = '$username') AND (pass = '$password'))";
 	
 	$result = mysqli_query($conn, $sql);
-	$num_rows = mysqli_num_rows($result);
+	$num_rows = mysqli_num_rows($conn, $result);
 	if($num_rows > 0) {
     	echo "Welcome, $username";
 	}
