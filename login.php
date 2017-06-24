@@ -18,8 +18,9 @@
 	$result = mysqli_query($conn, $sql);
 	$num_rows = mysqli_num_rows($result);
 	if($num_rows > 0) {
-    	echo "Welcome, $username";
-    	die();							#halts execution
+    	echo "Welcome, $usernames";
+    	<input type = "button" value = "Book an appointment" onclick = "location = 'main.php' "/>
+    	<input type = "button" value = "Edit an appointment" onclick = "location = 'main.php' "/>
 	}
 
 $conn->close();
