@@ -13,7 +13,7 @@
 		echo "Connection Error";
 	}
 
-	$sql = "SELECT username FROM login WHERE ((username = $username) AND (pass = $password))";
+	$sql = "SELECT username, pass FROM login WHERE ((username = $username) AND (pass = $password))";
 	$result = $conn->query($sql);
 
 	if($result -> num_rows > 0) {
