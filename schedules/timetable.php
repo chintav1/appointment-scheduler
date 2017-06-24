@@ -32,8 +32,9 @@
 				</nav> -->
 			</header>
 			<div class="component">
+
 				<h2>Change Date</h2>
-				
+
 				<table>
 					<thead>
 						<tr>
@@ -46,13 +47,43 @@
 						</tr>
 					</thead>
 					<tbody>
+						<?php
+						$servername = "127.0.0.1";
+						$dbusername = "root";
+						$db = "sct";
+						$opentimeslot = ["10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00"];
+
+						$conn = mysqli_connect($servername, $dbusername,"", $db);
+						if ($conn->connect_error) {
+							echo "Connection Error";
+						}
+// get the name of the doctor that is on schedule this date and time
+
+			            foreach ($opentimeslot as $atime ) {
+
+			            ?>
+			                <tr>
+								<th><?php echo $atime;?></th>
+
+
+
+
+
+
+
+
+							</tr>
+			            <?php
+			            }
+			            ?>
 						<tr>
 							<th>10:00</th>
-							<td>52</td>
+							<td><button type="button">a doctor name<button></td>
 							<td>40</td>
 							<td>9</td>
 							<td>47</td>
 							<td>31</td>
+
 						</tr>
 						<tr>
 							<th>11:00</th>
