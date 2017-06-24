@@ -19,13 +19,15 @@
 	$num_rows = mysqli_num_rows($result);
 	if($num_rows > 0) {
     	echo "Welcome, $usernames";
-    	<input type = "button" value = "Book an appointment" onclick = "location = 'main.php' "/>
-    	<input type = "button" value = "Edit an appointment" onclick = "location = 'main.php' "/>
+    	input type = "button" value = "Book an appointment" onclick = "location = 'main.php' ";
+    	input type = "button" value = "Edit an appointment" onclick = "location = 'main.php' ";
+   		die();
 	}
 
 $conn->close();
 
 ?>
+	
 
 	<!--Re-enter if credentials are wrong-->
 	Invalid username/password. Please try again: <br>
