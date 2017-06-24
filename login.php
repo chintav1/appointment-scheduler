@@ -21,12 +21,14 @@
     	echo "Welcome, $username";
 	}
 
-	else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-	}
-
 $conn->close();
 
 ?>
+
+	<form action="login.php" method="post">				<!--Redirect if credentials are wrong-->
+   		Name: <input type="text" name="username"><br>
+   		Password: <input type="password" name="pass"><br>
+   		<input type="submit" value="Login">
+	</form>
 </body>
 </html>
