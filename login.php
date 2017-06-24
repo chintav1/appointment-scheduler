@@ -14,9 +14,10 @@
 	}
 
 	$sql = "SELECT username FROM login WHERE ((username = $username) AND (password = $password))";
+	$result = $conn->query($sql)
 
-	if ($conn->query($sql) === TRUE) {
-    echo "Welcome, $username"
+	if ($result -> num_rows > 0) {
+    echo "Welcome, $username";
 	}
 
 	else {
