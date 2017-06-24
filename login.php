@@ -2,7 +2,7 @@
 
 <?php
 
-	$username = $_POST["name"];
+	$username = $_POST["username"];
 	$password = $_POST["pass"];
 	$servername = "127.0.0.1";
 	$dbusername = "root";
