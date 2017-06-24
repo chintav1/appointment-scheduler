@@ -26,7 +26,8 @@ $conn->close();
 
 ?>
 
-	<!--Redirect if credentials are wrong-->
+	<!--Re-enter if credentials are wrong-->
+	Invalid username/password. Please try again: <br>
 	<form action="login.php" method="post">
    		Name: <input type="text" name="username"><br>
    		Password: <input type="password" name="pass"><br>
