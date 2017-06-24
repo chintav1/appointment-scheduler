@@ -7,7 +7,7 @@
    			<p align = "center"><input type="submit" value="Register"></p>
 		</form>
 
-		<form action="registerpage.php" method="post">
+		<form action="loginpage.php" method="post">
    			<p align = "center"><input type="submit" value="Login"></p>
 		</form>
 
