@@ -7,9 +7,11 @@ $out = array();
 exec('git fetch', $out);
 foreach($out as $line) {
     echo $line;
+    <br>
 }
 exec('git pull', $out);
 foreach($out as $line) {
     echo $line;
+    <br>
 }
 ?>
