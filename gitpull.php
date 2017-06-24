@@ -6,12 +6,12 @@
 $out = array();
 exec('git fetch', $out);
 foreach($out as $line) {
-    echo $line;
-    <br>
+    echo $line ."\n";
+
 }
 exec('git pull', $out);
 foreach($out as $line) {
-    echo $line;
-    <br>
+    echo $line ."\n";
+
 }
 ?>
