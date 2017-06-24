@@ -18,6 +18,7 @@
 	if ($conn->query($sql) === TRUE) {
     echo "Welcome, $username"
 	}
+
 	else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 	}
