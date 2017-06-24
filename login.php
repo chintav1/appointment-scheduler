@@ -29,7 +29,7 @@ $conn->close();
 	<!--Re-enter if credentials are wrong-->
 	Invalid username/password. Please try again: <br>
 	<form action="login.php" method="post">
-   		Name: <input type="text" name="username"><br>
+   		Username: <input type="text" name="username"><br>
    		Password: <input type="password" name="pass"><br>
    		<input type="submit" value="Login">
 	</form>
