@@ -64,7 +64,10 @@
 			            ?>
 			                <tr>
 								<th><?php echo $atime;?></th>
+								<?php
+								$result = mysqli_query("SELECT name FROM employee WHERE (employee)");
 
+								?>
 
 
 
@@ -85,7 +88,7 @@
 							<td>31</td>
 
 						</tr>
-						
+
 					</tbody>
 				</table>
 
