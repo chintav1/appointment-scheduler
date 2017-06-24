@@ -16,7 +16,7 @@
 	$sql = "SELECT username FROM login WHERE ((username = $username) AND (password = $password))";
 
 	if ($conn->query($sql) === TRUE) {
-    echo "Welcome," $username;
+    echo "Welcome, $username"
 	}
 	else {
     echo "Error: " . $sql . "<br>" . $conn->error;
