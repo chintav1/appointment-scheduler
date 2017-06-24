@@ -15,7 +15,7 @@
 
 	$sql = "SELECT username, pass FROM login WHERE ((username = $username) AND (pass = $password))";
 	
-	$result = mysqli_query($con, $sql);
+	$result = mysqli_query($conn, $sql);
 	$num_rows = mysqli_num_rows($result);
 	if($num_rows > 0) {
     	echo "Welcome, $username";
