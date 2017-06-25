@@ -91,7 +91,7 @@
 									$thistime = $atime.":00";
 
 									$result = mysqli_query($conn, "SELECT NAME FROM employee WHERE EMP_ID IN (SELECT employee_id FROM schedule WHERE avalible_date = ".$thisdate." AND avalible_time = ".$thistime." AND patient_id IS NULL)");
-									echo = $thisdate .$thistime;
+									echo $thisdate ." ".$thistime;
 								?>
 
 
