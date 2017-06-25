@@ -19,8 +19,8 @@
 				echo "Connection Error";
 			}
 
-			if (($name == "") OR ($DOB == "")) {
-				echo "Registration error: Name field is required";
+			if (($health == "") OR ($name == "") OR ($DOB == "") OR ($address == "") OR ($phone == "") OR ($username == "") OR ($password == "")) {
+				echo "Registration error: Some required fields are empty";
 				die();
 			}
 		
