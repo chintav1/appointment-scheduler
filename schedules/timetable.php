@@ -50,7 +50,7 @@
 							?>
 
 							<th><?php
-							echo date("Y-m-d". strtotime('monday this week'));
+							echo date("Y-m-d", strtotime('monday this week'));
 							echo $weekday,"\n";
 							// echo $thisdate;
 							?></th>
