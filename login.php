@@ -28,8 +28,8 @@
 		<link rel="stylesheet" type="text/css" href="schedules/timetable.php" />
 		return;
 	</script>
-	
 
+	
 	<!--Re-enter if credentials are wrong-->
 	Invalid username/password. Please try again: <br>
 	<form action="login.php" method="post">
