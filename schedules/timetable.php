@@ -39,22 +39,26 @@
 							$todaydate = date('Y-m-d');
 							$dayofweek = date('N');
 							$openingdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-							$i= 1;
+							$day_delta = $dayofweek - 1;
+							$weekstartdate = date($todaydate, strtotime("-{$day_delta} days"));;
+							$j = 0;
 							foreach ($openingdays as $weekday) {
-								$j = $i - $dayofweek;
 
-								$thisdate = date($todaydate, strtotime("+({$j}) days"));
+
+								$thisdate = date($todaydate, strtotime("+{$j} days"));
 
 							?>
 
-							<th><?php  echo $weekday;echo $thisdate
-											?></th>
+							<th><?php
+							echo $weekday;
+							echo $thisdate;
+							?></th>
 
 
 
 
 							<?php
-							$i++;
+							$j++;
 							}
 							?>
 						</tr>
