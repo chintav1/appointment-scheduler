@@ -88,9 +88,16 @@
 
 								for ($i =0; $i <5 ;$i++){
 									$thisdate = date("Y-m-d", strtotime("+{$i} days", strtotime('monday this week')));
+									$thistime = $atime.":00";
 
-
-									$result = mysqli_query($conn, "SELECT name FROM employee WHERE emp_id IN (SELECT employee_id From schedule WHERE patient_id IS NULL AND avaliable_time =".$atime.":00 AND avaliable_date=".$thisdate.")");
+									$result = mysqli_query($conn, "SELECT NAME
+																	FROM employee
+																	WHERE EMP_ID IN
+																	(SELECT employee_id
+																	 FROM schedule
+																	 WHERE avalible_date = ".$thisdate." AND
+																	 		avalible_time = ".$thistime." AND
+																	 		patient_id IS NULL)");
 
 
 								?>
