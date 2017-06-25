@@ -16,7 +16,7 @@
 
 			$result = mysqli_query($conn, $sql);
 			
-			echo mysql_result($result, 0);
+			echo mysql_result($result, 1);
 
 		?>
 
