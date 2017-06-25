@@ -92,11 +92,12 @@
 									$sql ="SELECT NAME FROM employee WHERE EMP_ID IN (SELECT employee_id FROM schedule WHERE avalible_date = '$thisdate' AND avalible_time = '$thistime' AND patient_id IS NULL)";
 									$result = $conn->query($sql);
 									echo "<td>";
-									echo $sql;
+									// echo $sql;
 								 	if($result->num_rows > 0){
 										while($row = $result->fetch_assoc()){
-											echo "DR.";
-											echo "<li><a href=' ?aid=" . $row["NAME"] . "'>\n";
+											echo "<li>";
+											echo "<a href=' ?aid=". $row["NAME"] . "'>\n";
+											echo "$row['NAME']";
 											echo "</a></li>\n";
 										}
 									}
