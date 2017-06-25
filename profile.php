@@ -12,16 +12,16 @@
 				echo "Connection Error";
 			}
 			
-			$sql = "SELECT name FROM login INNER JOIN patient ON ((login.Health_Card_No = patient.HEALTH_NO))";
+			$sql = "SELECT name FROM login INNER JOIN patient ON ((login.Health_Card_No = patient.HEALTH_NO) AND (login.Name = patient.NAME))";
 			
 
 			$result = mysqli_query($conn, $sql);
 
 			while($row = mysqli_fetch_assoc($result)) {
    				$name = $row['Name'];
-   				//$address = $row['ADDRESS'];
-   				//$email = $row['EMAIL'];
-   				//$phone = $row['PHN_NO'];
+   				$address = $row['ADDRESS'];
+   				$email = $row['EMAIL'];
+   				$phone = $row['PHN_NO'];
    				printf("<b> Name: </b> %s", $name);
    				
 			}
