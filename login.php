@@ -20,14 +20,14 @@
 	
 	if($num_rows > 0) {
     	echo "Welcome, $username";
+    	htmlentities(link rel="stylesheet" type="text/css" href="schedules/timetable.php");
 
 	}
 ?>
 
-	<script>
-		<link rel="stylesheet" type="text/css" href="schedules/timetable.php" />
-		return;
-	</script>
+	
+		
+		
 
 	
 	<!--Re-enter if credentials are wrong-->
