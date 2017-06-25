@@ -72,12 +72,14 @@
 
 								<td>
 								<?php
+									if ($result == 0) { }
+									else {
 									while($row = mysqli_fetch_array(mysqli_use_result ($result))){
 								?>
 									<button type="button"><?php echo $row['name']?><button>
 
 								<?php
-								}
+							}}
 								?>
 								</td>
 
