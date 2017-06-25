@@ -43,7 +43,9 @@
     			echo "New patient record created successfully";
 			}
 
-			
+			if($conn->query($sql1) == TRUE) {
+				echo "New login created";
+			}
 
 			else {
     			echo "Error: " . $sql . "<br>" . $conn->error;
