@@ -17,7 +17,7 @@
 
 			$result = mysqli_query($conn, $sql);
 
-			while($row = mysqli_fetch_assoc($conn, $result)) {
+			while($row = mysqli_fetch_assoc($result)) {
    				$name = $row['Name'];
    				//$address = $row['ADDRESS'];
    				//$email = $row['EMAIL'];
