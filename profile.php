@@ -12,8 +12,7 @@
 				echo "Connection Error";
 			}
 			
-			$sql = "SELECT name FROM login INNER JOIN patient ON ((login.Health_Card_No = patient.HEALTH_NO) AND (login.Name = patient.NAME))";
-			
+			$sql = "SELECT * FROM login INNER JOIN patient ON ((login.Health_Card_No = patient.HEALTH_NO) AND (login.Name = patient.NAME))";
 
 			$result = mysqli_query($conn, $sql);
 
