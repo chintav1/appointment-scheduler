@@ -66,7 +66,7 @@
 								for ($i =1; $i <6 ;$i++){
 									$j = $i - $dayofweek;
 									$thisdate = date($todaydate, strtotime("+({$j}) days"));
-									$result = mysqli_query("SELECT name FROM employee WHERE emp_id IN (SELECT employee_id From schedule WHERE patient_id IS NULL avaliable_time =".$atime."avaliable_date=".$thisdate );
+									$result = mysqli_query($conn, "SELECT name FROM employee WHERE emp_id IN (SELECT employee_id From schedule WHERE patient_id IS NULL avaliable_time =".$atime."avaliable_date=".$thisdate );
 								?>
 
 
