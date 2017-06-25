@@ -66,12 +66,12 @@
 								for ($i =1; $i <6 ;$i++){
 									$j = $i - $dayofweek;
 									$thisdate = date($todaydate, strtotime("+({$j}) days"));
-									$result = mysql_query($conn, "SELECT name FROM employee WHERE emp_id IN (SELECT employee_id From schedule WHERE patient_id IS NULL avaliable_time =".$atime."avaliable_date=".$thisdate );
+									$result = mysqli_query($conn, "SELECT name FROM employee WHERE emp_id IN (SELECT employee_id From schedule WHERE patient_id IS NULL AND avaliable_time =".$atime." AND avaliable_date=".$thisdate );
 								?>
 
 
 								<td>
-								<?php while($row = mysql_fetch_array($result)){
+								<?php while($row = mysqli_fetch_array($result)){
 								?>
 									<button type="button"><?php echo $row['name']?><button>
 
@@ -88,15 +88,7 @@
 			            <?php
 			            }
 			            ?>
-						<tr>
-							<th>10:00</th>
-							<td><button type="button">a doctor name<button></td>
-							<td>40</td>
-							<td>9</td>
-							<td>47</td>
-							<td>31</td>
-
-						</tr>
+					
 
 					</tbody>
 				</table>

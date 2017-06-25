@@ -14,10 +14,10 @@
 	}
 
 	$sql = "SELECT username, pass FROM login WHERE ((username = '$username') AND (pass = '$password'))";
-	
+
 	$result = mysqli_query($conn, $sql);
 	$num_rows = mysqli_num_rows($result);
-	
+
 	if($num_rows > 0) {
     	echo "Welcome, $username"."<br/>";
     	echo '<a href="http://70.77.112.86/schedules/timetable.php">Schedule</a>';
