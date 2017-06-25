@@ -15,8 +15,11 @@
 			$sql = "SELECT * FROM login JOIN patient ON login.Health_Card_No = patient.HEALTH_NO";
 
 			$result = mysqli_query($conn, $sql);
+			
+			while($row = mysql_fetch_array($result)) {
+				echo $row['Name'];
+			}
 
-			echo $result;
 		?>
 
 
