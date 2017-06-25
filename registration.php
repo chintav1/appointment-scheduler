@@ -30,7 +30,7 @@
 			
 			$num_rows = mysqli_num_rows($result);
 	
-			if ($num_rows > 0) {
+			if ($num_rows == 1) {
 				echo "An account with this health card number already exists.";
 				die();
 			}
