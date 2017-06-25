@@ -30,11 +30,11 @@
 			
 			$num_rows = mysqli_num_rows($result);
 	
-			if ($num_rows == 1) {
+			if ($num_rows > 0) {
 				echo "An account with this health card number already exists.";
 				die();
 			}
-		
+			
 			$sql = "INSERT INTO patient (HEALTH_NO, NAME, DOB, ADDRESS, PHN_NO, EMAIL) VALUES ('$health', '$name', '$DOB', '$address', '$phone', '$email')";
 			$sql1 = "INSERT INTO login (username, pass) VALUES ('$username','$password')";
 			
