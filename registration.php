@@ -36,12 +36,14 @@
 			}
 			
 			$sql = "INSERT INTO patient (HEALTH_NO, NAME, DOB, ADDRESS, PHN_NO, EMAIL) VALUES ('$health', '$name', '$DOB', '$address', '$phone', '$email')";
-			$sql1 = "INSERT INTO login (username, pass, name) VALUES ('$username','$password', '$name')";
+			$sql1 = "INSERT INTO login (username, pass, Name) VALUES ('$username','$password', '$name')";
 			
 			
 			if ($conn->query($sql) === TRUE) {
     			echo "New patient record created successfully";
 			}
+
+			
 
 			else {
     			echo "Error: " . $sql . "<br>" . $conn->error;
