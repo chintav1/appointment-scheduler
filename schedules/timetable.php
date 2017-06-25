@@ -97,7 +97,7 @@
 										while($row = $result->fetch_assoc()){
 											echo "<li>";
 											echo "<a href=' ?aid=". $row["NAME"] . "'>\n";
-											echo "$row['NAME']";
+											echo $row['NAME'];
 											echo "</a></li>\n";
 										}
 									}
