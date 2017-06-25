@@ -18,9 +18,15 @@
 			if ($conn->connect_error) {
 				echo "Connection Error";
 			}
-			$sql = "INSERT INTO patient (HEALTH_NO, NAME, DOB, ADDRESS, PHN_NO, EMAIL) VALUES ('$health', '$name', '$DOB', '$address', '$phone', '$email')";
-			$sql1 = "INSERT INTO login (username, pass) VALUES ('$username','$password')";
 
+			if (($name == "") OR ($DOB == "")) {
+				echo "Registration error: Name field is required";
+			}
+			else {
+				$sql = "INSERT INTO patient (HEALTH_NO, NAME, DOB, ADDRESS, PHN_NO, EMAIL) VALUES ('$health', '$name', '$DOB', '$address', '$phone', '$email')";
+				$sql1 = "INSERT INTO login (username, pass) VALUES ('$username','$password')";
+			}
+			
 			if ($conn->query($sql) === TRUE) {
     		echo "New patient record created successfully";
     		//echo "Your ID number is:" + $ID;
