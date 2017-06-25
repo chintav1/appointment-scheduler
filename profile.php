@@ -16,9 +16,7 @@
 
 			$result = mysqli_query($conn, $sql);
 			
-			while($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
-				print_r($row);			
-			}
+			echo mysql_result($result, 0);
 
 		?>
 
