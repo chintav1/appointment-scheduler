@@ -41,19 +41,19 @@
 							$week=date('W');
 							$dayofweek = date('N');
 							$openingdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-							$prev_monday=date("Y-m-d", strtotime('monday this week'));
+
 							$j = 0;
 
 							foreach ($openingdays as $weekday) {
 
 
-								$thisdate = strtotime("+{$j} day", strtotime($prev_monday));
+								$thisdate = date("YYYY-m-d", strtotime('monday this week +{$j} days'));
 
 							?>
 
 							<th><?php
 							echo $weekday."<br/>\n";
-							echo date("YYYY-m-d", $thisdate);
+							echo $thisdate;
 							?></th>
 
 
