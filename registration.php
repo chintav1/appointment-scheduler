@@ -23,18 +23,28 @@
 				echo "Registration error: Some required fields are empty";
 				die();
 			}
+
+			$patient_check = "SELECT HEALTH_NO FROM patient WHERE HEALTH_NO = $health";		//checking database for existing patient
+			
+			$result = mysqli_query($conn, $patient_check)
+			
+			$num_rows = mysqli_num_rows($result);
+	
+			if ($num_rows == 1) {
+				echo "You already have an account."
+				die();
+			}
 		
 			$sql = "INSERT INTO patient (HEALTH_NO, NAME, DOB, ADDRESS, PHN_NO, EMAIL) VALUES ('$health', '$name', '$DOB', '$address', '$phone', '$email')";
 			$sql1 = "INSERT INTO login (username, pass) VALUES ('$username','$password')";
 			
 			
 			if ($conn->query($sql) === TRUE) {
-    		echo "New patient record created successfully";
-    		//echo "Your ID number is:" + $ID;
+    			echo "New patient record created successfully";
 			}
 
 			else {
-    		echo "Error: " . $sql . "<br>" . $conn->error;
+    			echo "Error: " . $sql . "<br>" . $conn->error;
 			}
 
 			$conn->close();
