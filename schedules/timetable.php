@@ -34,7 +34,7 @@
 				<table>
 					<thead>
 						<tr>
-							<th>Denist Availability</th>
+							<th>Denist Availability<br/></th>
 							<?php
 							$todaydate = date('Y-m-d');
 							$year=date('Y');
@@ -47,7 +47,7 @@
 							foreach ($openingdays as $weekday) {
 
 
-								$thisdate = date("YYYY-m-d", strtotime('monday this week', strtotime("+{$j} days")));
+								$thisdate = date("Y-m-d", strtotime('monday this week', strtotime("+{$j} days")));
 
 							?>
 
@@ -85,9 +85,9 @@
 								<?php
 								// get the name of the doctor that is on schedule this date and time
 
-								for ($i =1; $i <6 ;$i++){
-
-									// $result = mysqli_query($conn, "SELECT name FROM employee WHERE emp_id IN (SELECT employee_id From schedule WHERE patient_id IS NULL AND avaliable_time =".$atime." AND avaliable_date=".$thisdate );
+								for ($i =0; $i <5 ;$i++){
+									$thisdate =date("Y-m-d", strtotime('monday this week', strtotime("+{$i} days")));
+									$result = mysqli_query($conn, "SELECT name FROM employee WHERE emp_id IN (SELECT employee_id From schedule WHERE patient_id IS NULL AND avaliable_time =".$atime." AND avaliable_date=".$thisdate );
 								?>
 
 
