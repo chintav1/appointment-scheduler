@@ -89,7 +89,7 @@
 								for ($i =0; $i <5 ;$i++){
 									$thisdate = date("Y-m-d", strtotime("+{$i} days", strtotime('monday this week')));
 
-									$result = mysqli_query($conn, "SELECT name FROM employee WHERE emp_id IN (SELECT employee_id From schedule WHERE patient_id IS NULL AND avaliable_time =".$atime." AND avaliable_date=".$thisdate );
+									$result = mysqli_query($conn, "SELECT name FROM employee WHERE emp_id IN (SELECT employee_id From schedule WHERE patient_id IS NULL AND avaliable_time =".$atime.":00 AND avaliable_date=".$thisdate );
 
 								?>
 
@@ -98,7 +98,7 @@
 								<?php
 									if ($result == 0) { }
 									else {
-									while($row = mysqli_fetch_array(mysqli_use_result ($result))){
+									while($row = mysqli_fetch_array($result)){
 								?>
 									<button type="button"><?php echo $row['name']?><button>
 
