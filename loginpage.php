@@ -8,7 +8,7 @@
    Password: <input type="password" name="pass"><br>
    <input type="submit" value="Login">
 </form>
-Don't have an account? Register <a href="70.77.112.86/register.php">here</a>		<!-- link to registration page -->
+Don't have an account? Register <a href="register.php">here</a>		<!-- link to registration page -->
 
 
 </body>
