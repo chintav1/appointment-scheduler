@@ -47,12 +47,12 @@
 							foreach ($openingdays as $weekday) {
 
 
-								$thisdate = date($prev_monday, strtotime('+{$j} days'));
+								$thisdate = strtotime("+{$j} day", strtotime($prev_monday));
 
 							?>
 
 							<th><?php
-
+							echo $j;
 							echo $weekday."<br/>\n";
 							echo $thisdate;
 							?></th>
