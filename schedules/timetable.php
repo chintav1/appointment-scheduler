@@ -71,7 +71,8 @@
 
 
 								<td>
-								<?php while($row = mysqli_fetch_array($result)){
+								<?php
+									while($row = mysqli_fetch_array(mysqli_use_result ($result))){
 								?>
 									<button type="button"><?php echo $row['name']?><button>
 
@@ -88,7 +89,7 @@
 			            <?php
 			            }
 			            ?>
-					
+
 
 					</tbody>
 				</table>
