@@ -35,11 +35,24 @@
 					<thead>
 						<tr>
 							<th>Denist Availability</th>
-							<th>Monday</th>
-							<th>Tuesday</th>
-							<th>Wednesday</th>
-							<th>Thursday</th>
-							<th>Friday</th>
+							<?php
+							$todaydate = date('Y-m-d');
+							$dayofweek = date('N');
+							$j = 1 - $dayofweek;
+							$thisdate = date($todaydate, strtotime("+({$j}) days"));
+							$openingdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+							foreach ($openingdays as $weekday) {
+							?>
+
+							<th><?php  echo $weekday;echo
+											?></th>
+
+
+
+
+							<?php
+							}
+							?>
 						</tr>
 					</thead>
 					<tbody>
@@ -48,8 +61,7 @@
 						$dbusername = "root";
 						$db = "sct";
 						$opentimeslot = ["10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00"];
-						$todaydate = date('Y-m-d');
-						$dayofweek = date('N');
+
 						$conn = mysqli_connect($servername, $dbusername,"", $db);
 						if ($conn->connect_error) {
 							echo "Connection Error";
@@ -64,8 +76,7 @@
 								// get the name of the doctor that is on schedule this date and time
 
 								for ($i =1; $i <6 ;$i++){
-									$j = $i - $dayofweek;
-									$thisdate = date($todaydate, strtotime("+({$j}) days"));
+
 									$result = mysqli_query($conn, "SELECT name FROM employee WHERE emp_id IN (SELECT employee_id From schedule WHERE patient_id IS NULL AND avaliable_time =".$atime." AND avaliable_date=".$thisdate );
 								?>
 
