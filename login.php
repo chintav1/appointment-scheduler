@@ -21,16 +21,13 @@
 	if($num_rows > 0) {
     	echo "Welcome, $username"."<br/>";
     	echo '<a href="http://70.77.112.86/schedules/timetable.php">Schedule</a>';
+    	echo '\t<a href="http://70.77.112.86/profile.php">Profile</a>';
     	die();
 
 	}
 ?>
 
-	
-		
-		
 
-	
 	<!--Re-enter if credentials are wrong-->
 	Invalid username/password. Please try again: <br>
 	<form action="login.php" method="post">
