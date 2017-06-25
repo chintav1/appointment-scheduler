@@ -36,7 +36,7 @@
 			}
 			
 			$sql = "INSERT INTO patient (HEALTH_NO, NAME, DOB, ADDRESS, PHN_NO, EMAIL) VALUES ('$health', '$name', '$DOB', '$address', '$phone', '$email')";
-			$sql1 = "INSERT INTO login (username, pass) VALUES ('$username','$password')";
+			$sql1 = "INSERT INTO login (username, pass, name) VALUES ('$username','$password', '$name')";
 			
 			
 			if ($conn->query($sql) === TRUE) {
