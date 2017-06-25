@@ -34,7 +34,8 @@
 				<table>
 					<thead>
 						<tr>
-							<th>Denist Availability<br/></th>
+							<th>Denist Availability<br/>
+							</th>
 							<?php
 							$todaydate = date('Y-m-d');
 							$year=date('Y');
@@ -86,7 +87,8 @@
 								// get the name of the doctor that is on schedule this date and time
 
 								for ($i =0; $i <5 ;$i++){
-									$thisdate =date("Y-m-d", strtotime('monday this week', strtotime("+{$i} days")));
+									$thisdate = date("Y-m-d", strtotime("+{$j} days", strtotime('monday this week')));
+
 									$result = mysqli_query($conn, "SELECT name FROM employee WHERE emp_id IN (SELECT employee_id From schedule WHERE patient_id IS NULL AND avaliable_time =".$atime." AND avaliable_date=".$thisdate );
 								?>
 
