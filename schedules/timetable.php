@@ -37,22 +37,21 @@
 							<th>Denist Availability</th>
 							<?php
 							$todaydate = date('Y-m-d');
-							$year=date(Y);
-							$week=date(W);
+							$year=date('Y');
+							$week=date('W');
 							$dayofweek = date('N');
 							$openingdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
 							$j = 0;
 							foreach ($openingdays as $weekday) {
 
 
-								$thisdate = date($weekstartdate, strtotime("+{$j} days"));
+								// $thisdate = date($weekstartdate, strtotime("+{$j} days"));
 
 							?>
 
 							<th><?php
-							echo $year;
-							echo $week;
-							echo $weekday."\n";
+							echo date("Y-m-d". strtotime('monday this week'));
+							echo $weekday,"\n";
 							echo $thisdate;
 							?></th>
 
