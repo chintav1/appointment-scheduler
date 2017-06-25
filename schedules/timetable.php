@@ -71,7 +71,7 @@
 
 
 								<td>
-								<?php while($row = mysql_fetch_array($result)){
+								<?php while($row = mysqli_fetch_array($result)){
 								?>
 									<button type="button"><?php echo $row['name']?><button>
 
