@@ -52,9 +52,8 @@
 							?>
 
 							<th><?php
-							echo $j;
 							echo $weekday."<br/>\n";
-							echo $thisdate;
+							echo date($thisdate);
 							?></th>
 
 
