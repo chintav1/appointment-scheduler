@@ -2,6 +2,7 @@
 	<body>
 
 		<?php
+			$username = $_POST['username'];
 			$servername = "127.0.0.1";
 			$dbusername = "root";
 			$db = "sct";
@@ -12,7 +13,7 @@
 				echo "Connection Error";
 			}
 			
-			$sql = "SELECT * FROM login INNER JOIN patient ON ((login.Health_Card_No = patient.HEALTH_NO) AND (login.Name = patient.NAME))";
+			$sql = "SELECT * FROM login INNER JOIN patient ON ((username = $username) AND (login.Health_Card_No = patient.HEALTH_NO))";
 
 			$result = mysqli_query($conn, $sql);
 
