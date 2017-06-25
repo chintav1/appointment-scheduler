@@ -101,11 +101,10 @@
 									echo "no one avaliable";
 									}
 									else{
-									while($row = $result->fetch_assoc()){
-								?>
-										<button type="button"><?php echo $row['NAME'];?><button>
+									while($D = $result->fetch_assoc()){
 
-								<?php
+										echo "<li><a href=' ?aid=" . $D['NAME'] . "'>\n";
+										echo "</a></li>\n";
 									}}
 								?>
 								</td>
