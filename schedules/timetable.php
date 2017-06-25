@@ -17,12 +17,7 @@
 		<![endif]-->
 	</head>
 	<body>
-		<div class="container">
-			<!-- Top Navigation -->
-			<div class="codrops-top clearfix">
-				<a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Tutorials/ShapeHoverEffectSVG/"><span>Previous Demo</span></a>
-				<span class="right"><a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=18116"><span>Back to the Codrops Article</span></a></span>
-			</div>
+
 			<header>
 				<h1>Schedule your appointment <span>Date: </span></h1>
 				<!-- <nav class="codrops-demos">
