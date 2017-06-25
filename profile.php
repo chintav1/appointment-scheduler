@@ -16,8 +16,8 @@
 
 			$result = mysqli_query($conn, $sql);
 			
-			while($row = mysql_fetch_array($result)) {
-				echo $row['Name'];
+			while($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
+				print_r($row);			
 			}
 
 		?>
