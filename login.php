@@ -19,7 +19,8 @@
 	$num_rows = mysqli_num_rows($result);
 	
 	if($num_rows > 0) {
-    	echo "Welcome, $username\n";
+    	echo "Welcome, $username";
+    	echo "\r\n";
     	echo '<a href="http://70.77.112.86/schedules/timetable.php">Schedule</a>';
     	die();
 
