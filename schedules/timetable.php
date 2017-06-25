@@ -73,7 +73,7 @@
 						$db = "sct";
 						$opentimeslot = ["10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00"];
 
-						$conn = mysqli_connect($servername, $dbusername,"", $db);
+						$conn = new mysqli($servername, $dbusername,"", $db);
 						if ($conn->connect_error) {
 							echo "Connection Error";
 						}
@@ -89,26 +89,23 @@
 								for ($i =0; $i <5 ;$i++){
 									$thisdate = date("Y-m-d", strtotime("+{$i} days", strtotime('monday this week')));
 									$thistime = $atime.":00";
-
-									$result = mysqli_query($conn, "SELECT NAME FROM employee WHERE EMP_ID IN (SELECT employee_id FROM schedule WHERE avalible_date = ".$thisdate." AND avalible_time = ".$thistime." AND patient_id IS NULL)");
-									echo $thisdate ." ".$thistime;
+									$sql ="SELECT NAME FROM employee WHERE EMP_ID IN (SELECT employee_id FROM schedule WHERE avalible_date = ".$thisdate." AND avalible_time = ".$thistime." AND patient_id IS NULL)";
+									$result = $conn ->query($sql);
 								?>
 
 
 								<td>
 								<?php
-								 	if (!$result){
-									echo "no one avaliable";
-									}
-									else{
-									echo "<ul>\n";
-									while($D = $result->fetch_assoc()){
+								 	if($result->num_rows > 0){
+									// echo "<ul>\n";
+										while($D = $result->fetch_assoc()){
 
-										echo "<li><a href=' ?aid=" . $D['NAME'] . "'>\n";
-										echo "</a></li>\n";
+											echo "<li><a href=' ?aid=" . $D['NAME'] . "'>\n";
+											echo "</a></li>\n";
+										}
 									}
-									echo "<\ul>\n";
-								}
+									// echo "<\ul>\n";
+
 								?>
 								</td>
 
