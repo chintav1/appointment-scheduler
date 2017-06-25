@@ -99,13 +99,14 @@
 								<?php
 								 	if (!$result){
 									echo "no one avaliable";
-								}
+									}
+									else{
 									while($row = $result->fetch_assoc()){
 								?>
-									<button type="button"><?php echo $row['NAME'];?><button>
+										<button type="button"><?php echo $row['NAME'];?><button>
 
 								<?php
-							}
+									}}
 								?>
 								</td>
 
