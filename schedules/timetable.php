@@ -19,8 +19,8 @@
 	<body>
 
 			<header>
-				<h1>Schedule your appointment </h1>
-					<span>Date: </span>
+				<h1 align = "center" >Schedule your appointment </h1>
+
 				<!-- <nav class="codrops-demos">
 					<a href="index.html">Basic Usage</a>
 					<a class="current-demo" href="index2.html">Biaxial Headers</a>
