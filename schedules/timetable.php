@@ -52,7 +52,7 @@
 							<th><?php
 							echo date("Y-m-d". strtotime('monday this week'));
 							echo $weekday,"\n";
-							echo $thisdate;
+							// echo $thisdate;
 							?></th>
 
 
@@ -86,7 +86,7 @@
 
 								for ($i =1; $i <6 ;$i++){
 
-									$result = mysqli_query($conn, "SELECT name FROM employee WHERE emp_id IN (SELECT employee_id From schedule WHERE patient_id IS NULL AND avaliable_time =".$atime." AND avaliable_date=".$thisdate );
+									// $result = mysqli_query($conn, "SELECT name FROM employee WHERE emp_id IN (SELECT employee_id From schedule WHERE patient_id IS NULL AND avaliable_time =".$atime." AND avaliable_date=".$thisdate );
 								?>
 
 
