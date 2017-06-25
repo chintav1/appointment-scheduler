@@ -71,7 +71,7 @@
 
 
 								<td>
-								<?php while($row = $result->fetch_assoc($result)){
+								<?php while($row == $result->fetch_assoc($result)){
 								?>
 									<button type="button"><?php echo $row['name']?><button>
 
