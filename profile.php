@@ -18,7 +18,10 @@
 
 			while($row = mysqli_fetch_assoc($result)) {
    				$name = $row['Name'];
-   				echo "Hello, $name"; 
+   				$address = $row['ADDRESS'];
+   				$email = $row['EMAIL'];
+   				$phone = $row['PHN_NO'];
+   				printf("<b> Name: </b> %s", $name)
    				
 			}
 
