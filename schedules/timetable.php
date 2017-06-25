@@ -71,7 +71,7 @@
 
 
 								<td>
-								<?php while($row = mysql_fetch_array($result)){
+								<?php while($row = mysqli_fetch_array($result)){
 								?>
 									<button type="button"><?php echo $row['name']?><button>
 
@@ -88,15 +88,7 @@
 			            <?php
 			            }
 			            ?>
-						<tr>
-							<th>10:00</th>
-							<td><button type="button">a doctor name<button></td>
-							<td>40</td>
-							<td>9</td>
-							<td>47</td>
-							<td>31</td>
-
-						</tr>
+					
 
 					</tbody>
 				</table>
