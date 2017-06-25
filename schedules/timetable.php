@@ -47,7 +47,7 @@
 							foreach ($openingdays as $weekday) {
 
 
-								$thisdate = date("YYYY-m-d", strtotime('monday this week +{$j} days'));
+								$thisdate = date("YYYY-m-d", strtotime('monday this week', strtotime("+{$j} days")));
 
 							?>
 
