@@ -40,7 +40,7 @@
 							$dayofweek = date('N');
 							$openingdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
 							$day_delta = $dayofweek - 1;
-							$weekstartdate = date($todaydate, strtotime('-'.$day_delta. ' days'));
+							$weekstartdate = date($todaydate,time() - $day_delta*3600*24);
 							$j = 0;
 							foreach ($openingdays as $weekday) {
 
