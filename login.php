@@ -20,8 +20,8 @@
 	
 	if($num_rows > 0) {
     	echo "Welcome, $username";
-    	$link = "<link rel= stylesheet type= text/css href=schedules/timetable.php/>";
-    	exec(htmlentities($link));
+    	$link = "<link rel= \"stylesheet\" type= \"text/css\" href=\"schedules/timetable.php\"/>";
+    	htmlentities($link);
     	die();
 
 	}
