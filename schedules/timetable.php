@@ -89,8 +89,9 @@
 								for ($i =0; $i <5 ;$i++){
 									$thisdate = date("Y-m-d", strtotime("+{$i} days", strtotime('monday this week')));
 									$thistime = $atime.":00";
-									$sql ="SELECT NAME FROM employee WHERE EMP_ID IN (SELECT employee_id FROM schedule WHERE avalible_date = ".$thisdate." AND avalible_time = ".$thistime." AND patient_id IS NULL)";
-									$result = $conn ->query($sql);
+									$sql ="SELECT NAME FROM employee WHERE EMP_ID IN (SELECT employee_id FROM schedule WHERE avalible_date = '$thisdate' AND avalible_time = '$thistime' AND patient_id IS NULL)";
+									$result = $conn->query($sql);
+									echo $sql;
 								?>
 
 
@@ -98,11 +99,14 @@
 								<?php
 								 	if($result->num_rows > 0){
 									// echo "<ul>\n";
-										while($D = $result->fetch_assoc()){
+										while($row = $result->fetch_assoc()){
 
-											echo "<li><a href=' ?aid=" . $D['NAME'] . "'>\n";
+											echo "<li><a href=' ?aid=" . $row["NAME"] . "'>\n";
 											echo "</a></li>\n";
 										}
+									}
+									else {
+										echo "<li>Not Avaliable</li>";
 									}
 									// echo "<\ul>\n";
 
