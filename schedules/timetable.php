@@ -97,9 +97,12 @@
 
 								<td>
 								<?php
+								 	if (!$result){
+									echo "no one avaliable";
+								}
 									while($row = $result->fetch_assoc()){
 								?>
-									<button type="button"><?php echo $row['name'];?><button>
+									<button type="button"><?php echo $row['NAME'];?><button>
 
 								<?php
 							}
