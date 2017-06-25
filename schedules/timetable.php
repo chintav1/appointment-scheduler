@@ -102,7 +102,7 @@
 									<button type="button"><?php echo $row['name'];?><button>
 
 								<?php
-							}}
+							}
 								?>
 								</td>
 
