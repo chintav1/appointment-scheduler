@@ -50,7 +50,7 @@
 							?>
 
 							<th><?php
-							echo $day_delta;
+							echo $weekstartdate;
 							echo $weekday."\n";
 							echo $thisdate;
 							?></th>
