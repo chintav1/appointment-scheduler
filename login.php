@@ -20,7 +20,9 @@
 	
 	if($num_rows > 0) {
     	echo "Welcome, $username";
-    	htmlentities(link rel="stylesheet" type="text/css" href="schedules/timetable.php");
+    	$link = "<link rel="stylesheet" type="text/css" href="schedules/timetable.php"/>"
+    	echo htmlentities($link);
+    	die();
 
 	}
 ?>
