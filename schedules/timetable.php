@@ -53,7 +53,7 @@
 
 							<th><?php
 							echo $weekday."<br/>\n";
-							echo date($thisdate);
+							echo date("YYYY-m-d", $thisdate);
 							?></th>
 
 
