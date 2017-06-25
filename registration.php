@@ -24,7 +24,7 @@
 				die();
 			}
 
-			$patient_check = "SELECT HEALTH_NO FROM patient WHERE HEALTH_NO = $health";		//checking database for existing patient
+			$patient_check = "SELECT HEALTH_NO FROM patient WHERE (HEALTH_NO = '$health')";		//checking database for existing patient
 			
 			$result = mysqli_query($conn, $patient_check);
 			
