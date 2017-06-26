@@ -22,6 +22,7 @@
     	echo "Welcome, $username"."<br/>";
     	echo '<a href="http://70.77.112.86/schedules/timetable.php">Schedule</a>';
     	echo '&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://70.77.112.86/profile.php">Profile</a>';
+
     	die();
 
 	}
