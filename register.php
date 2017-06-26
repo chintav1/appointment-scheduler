@@ -4,10 +4,10 @@
 	<body>
 		<p align = "center">I am a:</p>
 		<form action="patient_register.php" method="post">
-			<p align = "center"><input type = "submit" value = "Patient"></p><br>
+			<p align = "center"><input type = "submit" value = "Patient"></p>
    		</form>
 
-   		<form action="patient_register.php" method="post">
+   		<form action="employee_register.php" method="post">
 			<p align = "center"><input type = "submit" value = "Employee"></p>
    		</form>
 	</body>
