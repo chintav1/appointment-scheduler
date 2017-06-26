@@ -17,7 +17,7 @@
 
 			$result = $conn -> query($sql);
 
-			while($result->fetch_assoc()) {
+			while($row = $result->fetch_assoc()) {
    				$name = $row['Name'];
    				$address = $row['ADDRESS'];
    				$email = $row['EMAIL'];
