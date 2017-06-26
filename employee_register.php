@@ -16,7 +16,7 @@
 				<option value = "">Select...</option>
 				<option value = "Dentist">Dentist</option>
 				<option value="Hygenist">Hygenist</option>
-			</select>	
+			</select>	<br>
 			------------------------------------------------------------<br>
 			Username: <br>
 			<input type= "text" name="username"><br>
