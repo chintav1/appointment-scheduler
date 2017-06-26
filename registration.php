@@ -2,7 +2,6 @@
 	<body>
 		<?php
 			$health = $_POST["health"];
-		//	$ID = random_int(1000, 9999);
 			$name = $_POST["name"];
 			$DOB = $_POST["DOB"];
 			$address = $_POST["address"];

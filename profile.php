@@ -15,9 +15,9 @@
 			
 			$sql = "SELECT * FROM login INNER JOIN patient ON ((username = $username) AND (login.Health_Card_No = patient.HEALTH_NO))";
 
-			$result = mysqli_query($conn, $sql);
+			$result = $conn -> query($sql);
 
-			while($row = mysqli_fetch_assoc($result)) {
+			while($result->fetch_assoc()) {
    				$name = $row['Name'];
    				$address = $row['ADDRESS'];
    				$email = $row['EMAIL'];
