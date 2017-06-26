@@ -12,7 +12,7 @@
 				echo "Connection Error";
 			}
 			
-			$sql = "SELECT * FROM login INNER JOIN patient ON  (login.Health_Card_No = patient.HEALTH_NO)";
+			$sql = "SELECT * FROM login RIGHT JOIN patient ON  (login.Health_Card_No = patient.HEALTH_NO)";
 
 			$result = $conn -> query($sql);
 
