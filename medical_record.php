@@ -22,7 +22,7 @@
 			$num_patients = mysqli_num_rows($patient_result);
 
 			if ($num_patients > 0) {
-				$update_record = "UPDATE medical_history SET allergies = '$allergy', note = '$note' ";
+				$update_record = "UPDATE medical_history SET allergies = '$allergy', note = '$note' WHERE patient_id = '$PID' ";
 				$result = mysqli_query($conn, $update_record);
 
 				if($result == TRUE) {
