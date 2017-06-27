@@ -35,12 +35,17 @@
 			}
 
 			$sql = "INSERT INTO patient (health_no, name, dob, address, phone, email) VALUES ('$health', '$name', '$DOB', '$address', '$phone', '$email')";
-			$sql1 = "INSERT INTO login (username, pass, type, type_id) VALUES ('$username','$password', '$name', '$health')";
 
 
 			if ($conn->query($sql) === TRUE) {
     			echo "New patient record created successfully";
 			}
+
+			$sql ="SELECT id FROM patient WHERE health_no='$health' AND name='$name' AND dob='$DOB'";
+			$result = $conn->query($sql);
+			$row = $result->fetch_assoc();
+			$id = $row['id'];
+			$sql1 = "INSERT INTO login (username, pass, type, type_id) VALUES ('$username','$password', 'patient', '$id')";
 
 			if($conn->query($sql1) == TRUE) {
 				echo "New login created";
@@ -48,6 +53,7 @@
 
 			else {
     			echo "Error: " . $sql . "<br>" . $conn->error;
+
 			}
 
 			$conn->close();

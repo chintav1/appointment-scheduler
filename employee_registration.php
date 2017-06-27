@@ -30,16 +30,22 @@
 				die();
 			}
 				$sql = "INSERT INTO employee(name, email, certification) VALUES ('$name', '$email', '$certificate')";
-				$login = "INSERT INTO login(username, pass, Name) VALUES ('$username', '$password', '$name')";
-				$clinic = "INSERT INTO clinic(name, address, phone, hours) VALUES ('$clinic_name', '$clinic_address', '$clinic_phone', '$clinic_hours')";
 
 				if ($conn->query($sql) == TRUE) {
     				echo "New employee record created";
 				}
 
+				$sql1 = "SELECT id FROM employee WHERE name ='$name' AND certification = '$certificate'";
+				$result = $conn->query($sql1);
+				$row = $result->fetch_assoc();
+				$id = $row['id'];
+				$login = "INSERT INTO login(username, pass, type, type_id) VALUES ('$username', '$password', 'employee', '$id')";
+
 				if ($conn -> query($login) == TRUE) {
 					echo "Welcome, $name";
 				}
+
+				$clinic = "INSERT INTO clinic(name, address, phone, hours) VALUES ('$clinic_name', '$clinic_address', '$clinic_phone', '$clinic_hours')";
 
 				if ($conn -> query($clinic) == TRUE) {
 					echo "Clinic created successfully";

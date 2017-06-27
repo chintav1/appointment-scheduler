@@ -24,9 +24,16 @@
 	if($num_rows > 0) {
 
     	echo "Welcome, $username, your Patient ID is $pid"."<br/>";
-    	echo '<a href="schedules/timetable.php?pid='.$pid.'&date='.$date.'">Schedule</a>';
-    	echo '&nbsp;&nbsp;&nbsp;&nbsp;<a href="profile.php">Profile</a>';
-    	echo '&nbsp;&nbsp;&nbsp;&nbsp;<a href="record.php">Medical Record</a>';
+		if ($pt == 'employee'){
+			echo '<a href="schedules/createschedulefront.php?pid='.$pid.'&date='.$date.'">Add new schedule</a>';
+		}
+		if ($pt == 'patient'){
+    		echo '<a href="schedules/timetable.php?pid='.$pid.'&date='.$date.'">Schedule</a>';
+			echo '&nbsp;&nbsp;&nbsp;&nbsp;<a href="profile.php">Profile</a>';
+			echo '&nbsp;&nbsp;&nbsp;&nbsp;<a href="record.php">Medical Record</a>';
+
+		}
+
 
     	die();
 
