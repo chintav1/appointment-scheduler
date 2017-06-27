@@ -19,8 +19,11 @@
 
 
 
-			if ($conn->query($sql) === TRUE) {
-    			echo "appointment booked";
+			if ($conn->query($sql) == TRUE) {
+    			echo "appointment booked <br>";
+                echo '<a href="timetable.php?pid='.$pid.'&date='.$date.'">';
+                echo "go back";
+                echo "</a>";
 			}
 			else {
     			echo "Error: " . $sql . "<br>" . $conn->error;
