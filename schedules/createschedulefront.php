@@ -16,7 +16,7 @@
 			end time: <br>
 			<input type="time" name="endtime"><br>
 
-   			<input type="submit" value="Register">
+   			<input type="submit" value="Add">
    		</form>
 	</body>
 </html>

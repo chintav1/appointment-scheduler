@@ -23,7 +23,7 @@
 
 			$num_rows = mysqli_num_rows($result);
 
-			$sql = "INSERT INTO schedule(employee_id,avalible_date,avalible_time,patient_id) VALUES ('$eid','$date','$time','')";
+			$sql = "INSERT INTO schedule(employee_id,avalible_date,avalible_time) VALUES ('$eid','$date','$time')";
 
 
 			if ($conn->query($sql) === TRUE) {
