@@ -14,12 +14,15 @@
 			}
 
 			$insert_record = "INSERT INTO medical_history VALUES ('$PID', '$allergy', '$note')";
-			$check_patient = "SELECT * FROM medical_history WHERE medical_history.patient_id = $PID";
+			
+			$check_patient = "SELECT * FROM medical_history WHERE medical_history.patient_id = '$PID'";
+			
 			$patient_result = mysqli_query($conn, $check_patient);
+			
 			$num_patients = mysqli_num_rows($patient_result);
 
 			if ($num_patients > 0) {
-				$update_record = "UPDATE medical_history SET allergies = $allergy, note = $note"
+				$update_record = "UPDATE medical_history SET allergies = '$allergy', note = '$note' ";
 				$result = mysqli_query($conn, $update_record);
 
 				if($result == TRUE) {
