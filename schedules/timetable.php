@@ -27,8 +27,8 @@
 				$openingdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
 				$thismonday =$_GET['date'];
 				$pid=$_GET['pid'];
-				$nextmonday = date("Y-m-d", strtotime("monday next week"));
-				$lastmonday= date("Y-m-d", strtotime("monday last week"));
+				$nextmonday = date("Y-m-d", strtotime("+1 week", strtotime($thismonday)));
+				$lastmonday= date("Y-m-d", strtotime("-1 week", strtotime($thismonday)));
 				echo "<h1 align = 'center' > Week of: '$thismonday'</h1>";
 				 ?>
 				<!-- <nav class="codrops-demos">
