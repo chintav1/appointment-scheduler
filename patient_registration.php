@@ -49,13 +49,13 @@
 			$id = $row['id'];
 			$sql1 = "INSERT INTO login (username, pass, type, type_id) VALUES ('$username','$password', 'patient', '$id')";
 
-			$insurance_check = "SELECT * FROM insurance WHERE policy_number = '$policy_number' AND company = '$insurance_company'";
+			$insurance_check = "SELECT * FROM insurance WHERE policy_no = '$policy_number' AND company = '$insurance_company'";
 			$insurance_result = mysqli_query($conn, $insurance_check);
 			$num_rows_insurance = mysqli_num_rows($insurance_result);
 
 			if ($num_rows_insurance < 1) {
 				$insert_insurance = "INSERT INTO insurance VALUES ('$policy_number', '$insurance_company') ";
-				$insert_result = mysqli_query($insert_insurance);
+				$insert_result = mysqli_query($conn, $insert_insurance);
 			}
 
 			if($conn->query($sql1) == TRUE) {
