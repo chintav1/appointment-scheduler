@@ -22,11 +22,17 @@
 
 			Email: <br>
 			<input type="email" name="email"><br>
+
+			Insurance Company: <br>
+			<input type = "text" name = "insurance_company"><br>
+
+			Insurance Policy Number: <br>
+			<input type = "number" name = "policy_no"><br>
 			------------------------------------------------------------<br>
 			Username: <br>
 			<input type= "text" name="username"><br>
 
-   		Password: <br>
+   			Password: <br>
 			<input type="password" name="pass"><br>
    			<input type="submit" value="Register">
    		</form>

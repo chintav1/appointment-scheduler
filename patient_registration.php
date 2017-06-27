@@ -7,6 +7,8 @@
 			$address = $_POST["address"];
 			$phone = $_POST["phone"];
 			$email = $_POST["email"];
+			$insurance_company = $_POST["insurance_company"];
+			$policy_number = $_POST["policy_no"];
 			$username = $_POST["username"];
 			$password = $_POST["pass"];
 			$servername = "127.0.0.1";
@@ -38,7 +40,7 @@
 
 
 			if ($conn->query($sql) === TRUE) {
-    			echo "New patient record created successfully";
+    			echo "New patient record created successfully <br>";
 			}
 
 			$sql ="SELECT id FROM patient WHERE health_no='$health' AND name='$name' AND dob='$DOB'";
@@ -47,8 +49,16 @@
 			$id = $row['id'];
 			$sql1 = "INSERT INTO login (username, pass, type, type_id) VALUES ('$username','$password', 'patient', '$id')";
 
+			$insurance_check = "SELECT * FROM insurance WHERE policy_number = '$policy_number' AND company = 'insurance_company'";
+			$insurance_result = mysqli_query($insurance_check);
+			$num_rows_insurance = mysqli_num_rows($insurance_result);
+
+			if ($num_rows_insurance == 0) {
+				$insert_insurance = "INSERT INTO insurance VALUES ('$policy_number', '$insurance_company' ";
+			}
+
 			if($conn->query($sql1) == TRUE) {
-				echo "New login created";
+				echo "New login created <br>";
 			}
 
 			else {
