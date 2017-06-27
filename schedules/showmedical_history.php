@@ -18,7 +18,7 @@
         if($num_rows > 0){
 
             echo "history of patient id '$pid' ";
-            $row = $result->fetch_assoc()
+            $row = $result->fetch_assoc();
             echo "allergies: ".$row['allergies'];
             echo '<br>';
             echo "notes: ".$row['note'];
