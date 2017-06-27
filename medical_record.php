@@ -13,10 +13,27 @@
 				echo "Connection Error";
 			}
 
-			$sql = "INSERT INTO medical_history VALUES ('$PID', '$allergy', '$note')";
+			$insert_record = "INSERT INTO medical_history VALUES ('$PID', '$allergy', '$note')";
+			$check_patient = "SELECT * FROM medical_history WHERE medical_history.patient_id = $PID";
+			$patient_result = mysqli_query($conn, $check_patient);
+			$num_patients = mysqli_num_rows($patient_result);
 
-			if ($conn -> query($sql) == TRUE) {
-				echo "Medical record updated successfully";
+			if ($num_patients > 0) {
+				$update_record = "UPDATE medical_history SET allergies = $allergy, note = $note"
+				$result = mysqli_query($conn, $update_record);
+
+				if($result == TRUE) {
+					echo "Medical record updated successfully";
+				}
+			}
+
+
+			else {
+				$result = mysqli_query($conn, $insert_record);
+
+				if($result == TRUE) {
+					echo "Medical record created successfully";
+				}
 			}
 
 		?>
