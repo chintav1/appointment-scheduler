@@ -12,7 +12,7 @@
 				echo "Connection Error";
 			}
 
-			$sql = "SELECT * FROM login WHERE (login.type_id = patient.id AND login.type = 'patient')";
+			$sql = "SELECT name FROM login AND patient WHERE (login.type_id = patient.id AND login.type = 'patient')";
 
 			$result = $conn -> query($sql);
 
