@@ -44,7 +44,7 @@
 				echo '<a href="schedules/timetable.php?pid='.$pid.'&date='.$lastmonday.'">Prev Week</a><br>';
 				echo '<a href="schedules/timetable.php?pid='.$pid.'&date='.$nextmonday.'">Next Week</a><br>';
 				?>
-				<button
+				
 				<table>
 					<thead>
 						<tr>
