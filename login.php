@@ -32,8 +32,8 @@
 		if ($pt == 'patient'){
 			echo "Welcome, $username, your Patient ID is $pid"."<br/>";
     		echo '<a href="schedules/timetable.php?pid='.$pid.'&date='.$date.'">Schedule</a>';
-			echo '&nbsp;&nbsp;&nbsp;&nbsp;<a href="profile.php">Profile</a>';
-			echo '&nbsp;&nbsp;&nbsp;&nbsp;<a href="record.php">Medical Record</a>';
+			echo '&nbsp;&nbsp;&nbsp;&nbsp;<a href="profile.php?pid='.$pid.'">Profile</a>';
+			echo '&nbsp;&nbsp;&nbsp;&nbsp;<a href="record.php?pid='.$pid.'">Medical Record</a>';
 
 		}
 
