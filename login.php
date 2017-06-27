@@ -23,7 +23,7 @@
 	$date =date('Y-m-d',strtotime('monday this week'));
 	if($num_rows > 0) {
 
-    	echo "Welcome, $username"."<br/>";
+    	echo "Welcome, $username, your Patient ID is $pid"."<br/>";
     	echo '<a href="schedules/timetable.php?pid='.$pid.'&date='.$date.'">Schedule</a>';
     	echo '&nbsp;&nbsp;&nbsp;&nbsp;<a href="profile.php">Profile</a>';
 
