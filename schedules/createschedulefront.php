@@ -4,7 +4,7 @@
 	<body>
         <?php
         $eid= $_GET['pid'];
-        echo "your Employee id is: '$eid'";
+
         ?>
 		<form action="createschedule.php" method="post">
             Create new schedules:
@@ -12,11 +12,16 @@
 			Date:<br>
 			<input type="date" name="date"><br>
 
-			start time:<br>
-			<input type="time" name="starttime"><br>
+		    times:<br>
+             <input type="checkbox" name="10" value="10"> 10:00 AM<br>
+             <input type="checkbox" name="11" value="11"> 11:00 AM<br>
+             <input type="checkbox" name="12" value="12"> 12:00 PM<br>
+             <input type="checkbox" name="13" value="13"> 1:00 PM<br>
+             <input type="checkbox" name="14" value="14e"> 2:00 PM<br>
+             <input type="checkbox" name="15" value="15"> 3:00 PM<br>
+             <input type="checkbox" name="16" value="16"> 4:00 PM<br>
+             <input type="checkbox" name="17" value="17"> 5:00 PM<br>
 
-			end time: <br>
-			<input type="time" name="endtime"><br>
 
    			<input type="submit" value="Add">
    		</form>
