@@ -28,7 +28,7 @@
 
 		//Checking for empty required fields
 			if(($name == "") OR ($certificate == "Select...") OR ($clinic_name == "") OR ($clinic_address == "") OR ($clinic_phone == "") OR ($clinic_hours == "") OR ($username == "") OR ($password == "")) {
-				echo "Fields with a (*) are required";
+				echo "Fields with a * are required";
 				die();
 			}
 		//Queries based on type of employee
