@@ -97,7 +97,7 @@
 								// get the name of the doctor that is on schedule this date and time
 
 								for ($i =0; $i <5 ;$i++){
-									$thisdate = date("Y-m-d", strtotime("+{$i} days", strtotime('monday this week')));
+									$thisdate = date("Y-m-d", strtotime("+{$i} days", strtotime($thismonday)));
 									$thistime = $atime.":00";
 									$sql ="SELECT * FROM employee WHERE id IN (SELECT employee_id FROM schedule WHERE avalible_date = '$thisdate' AND avalible_time = '$thistime' AND patient_id IS NULL)";
 									$result = $conn->query($sql);
