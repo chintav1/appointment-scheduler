@@ -7,16 +7,16 @@
         $dbusername = "root";
         $db = "sct";
 
-        $conn = new mysqli($servername, $dbusername,"", $db);
+        $conn =mysqli_connect($servername, $dbusername,"", $db);
         if ($conn->connect_error) {
             echo "Connection Error";
         }
 
 
         $sql = "SELECT s.employee_id, s.avalible_date, s.avalible_time,  p.name, FROM schedule AS s, patient AS p WHERE s.patient_id=p.id AND s.employee_id='$eid' ORDER BY s.avalible_date";
-        $result = $conn->query($sql);
-        echo $result;
-        if($result->num_rows > 0){
+        $result = mysqli_query($conn, $sql);
+        $num_rows = mysqli_num_rows($result);
+        if($num_rows > 0){
 
             echo "Your existing schedules:";
             echo '<ul style="list-style-type:none">';
