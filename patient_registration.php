@@ -50,7 +50,7 @@
 			$sql1 = "INSERT INTO login (username, pass, type, type_id) VALUES ('$username','$password', 'patient', '$id')";
 
 			$insurance_check = "SELECT * FROM insurance WHERE policy_number = '$policy_number' AND company = 'insurance_company'";
-			$insurance_result = mysqli_query($insurance_check);
+			$insurance_result = mysqli_query($conn, $insurance_check);
 			$num_rows_insurance = mysqli_num_rows($insurance_result);
 
 			if ($num_rows_insurance == 0) {
