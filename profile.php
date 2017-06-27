@@ -25,7 +25,11 @@
    					$email = $row['email'];
    					$phone = $row['phone'];
    					printf("<b> Name: </b> %s <br>", $name);
+   					printf("<b> Address: </b> %s <br>", $address);
    					printf("<b> Email: </b> %s <br>", $email);
+   					printf("<b> Phone: </b> %s <br>", $phone);
+
+
 				}
 			}
 
