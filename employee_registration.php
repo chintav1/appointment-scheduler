@@ -32,7 +32,7 @@
 				$sql = "INSERT INTO employee(name, email, certification) VALUES ('$name', '$email', '$certificate')";
 
 				if ($conn->query($sql) == TRUE) {
-    				echo "New employee record created";
+    				echo "New employee record created<br>";
 				}
 
 				$sql1 = "SELECT id FROM employee WHERE name ='$name' AND certification = '$certificate'";
@@ -42,13 +42,13 @@
 				$login = "INSERT INTO login(username, pass, type, type_id) VALUES ('$username', '$password', 'employee', '$id')";
 
 				if ($conn -> query($login) == TRUE) {
-					echo "Welcome, $name";
+					echo "Welcome, $name<br>";
 				}
 
 				$clinic = "INSERT INTO clinic(name, address, phone, hours) VALUES ('$clinic_name', '$clinic_address', '$clinic_phone', '$clinic_hours')";
 
 				if ($conn -> query($clinic) == TRUE) {
-					echo "Clinic created successfully";
+					echo "Clinic created successfully<br>";
 				}
 
 
