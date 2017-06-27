@@ -3,9 +3,9 @@
 
 	<body>
         <?php
-        $eid= $_GET['pid']
+        $eid= $_GET['pid'];
         echo "your Employee id is: '$eid'";
-         ?>
+        ?>
 		<form action="createschedule.php" method="post">
             Create new schedules:
             <input type="hidden" name="eid" value="<?php echo $eid;?>"/><br>
