@@ -27,6 +27,15 @@
                 }
             }
 
+			if ($conn->query($sql) == TRUE) {
+				echo "appointment created <br>";
+				echo '<a href="createschedulefront.php?pid='.$eid.'">Add new schedule</a>';
+				echo '&nbsp;&nbsp;&nbsp;&nbsp;<a href="cancelschedulefront.php?pid='.$eid.'">remove existing schedule</a>';
+
+			}
+			else {
+				echo "Error: " . $sql . "<br>" . $conn->error;
+			}
 
 			$conn->close();
 

@@ -8,7 +8,7 @@
 			$dbusername = "root";
 			$db = "sct";
             $date = date('Y-m-d',strtotime("monday this week"));
-			$conn = mysqli_connect($servername, $dbusername,"", $db);
+			$conn = new mysqli($servername, $dbusername,"", $db);
 			if ($conn->connect_error) {
 				echo "Connection Error";
 			}
@@ -19,10 +19,10 @@
 
 
 			if ($conn->query($sql) == TRUE) {
-    			echo "appointment canceled <br>";
-                echo '<a href="timetable.php?pid='.$pid.'&date='.$date.'">';
-                echo "go back";
-                echo "</a>";
+                echo "appointment canceled <br>";
+                echo '<a href="createschedulefront.php?pid='.$eid.'">Add new schedule</a>';
+                echo '&nbsp;&nbsp;&nbsp;&nbsp;<a href="cancelschedulefront.php?pid='.$eid.'">remove existing schedule</a>';
+
 			}
 			else {
     			echo "Error: " . $sql . "<br>" . $conn->error;
