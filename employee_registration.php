@@ -31,6 +31,7 @@
 			}
 				$sql = "INSERT INTO employee(NAME, EMAIL, CERTIFICATION) VALUES ('$name', '$email', '$certificate')";
 				$login = "INSERT INTO login(username, pass, Name) VALUES ('$username', '$password', '$name')";
+				$clinic = "INSERT INTO clinic(NAME, ADDRESS, PHN_NO, HOURS) VALUES ('$clinic_name', '$clinic_address', '$clinic_phone', '$clinic_hours')";
 				
 				if ($conn->query($sql) === TRUE) {
     				echo "New employee record created successfully";
@@ -38,6 +39,10 @@
 
 				if ($conn -> query($login) == TRUE) {
 					echo "Welcome";
+				}
+
+				if ($conn -> query($clinic) == TRUE) {
+					echo "Clinic created successfully";
 				}
 
 
