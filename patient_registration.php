@@ -23,21 +23,21 @@
 				die();
 			}
 
-			$patient_check = "SELECT HEALTH_NO FROM patient WHERE (HEALTH_NO = '$health')";		//checking database for existing patient
-			
+			$patient_check = "SELECT health_no FROM patient WHERE (health_no = '$health')";		//checking database for existing patient
+
 			$result = mysqli_query($conn, $patient_check);
-			
+
 			$num_rows = mysqli_num_rows($result);
-	
+
 			if ($num_rows > 0) {
 				echo "An account with this health card number already exists. Please try again with a different health card number.";
 				die();
 			}
-			
-			$sql = "INSERT INTO patient (HEALTH_NO, NAME, DOB, ADDRESS, PHN_NO, EMAIL) VALUES ('$health', '$name', '$DOB', '$address', '$phone', '$email')";
-			$sql1 = "INSERT INTO login (username, pass, Name, Health_Card_No) VALUES ('$username','$password', '$name', '$health')";
-			
-			
+
+			$sql = "INSERT INTO patient (health_no, name, dob, address, phone, email) VALUES ('$health', '$name', '$DOB', '$address', '$phone', '$email')";
+			$sql1 = "INSERT INTO login (username, pass, type, type_id) VALUES ('$username','$password', '$name', '$health')";
+
+
 			if ($conn->query($sql) === TRUE) {
     			echo "New patient record created successfully";
 			}

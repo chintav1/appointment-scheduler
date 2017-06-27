@@ -7,25 +7,25 @@
 			$db = "sct";
 
 			$conn = mysqli_connect($servername, $dbusername,"", $db);
-			
+
 			if ($conn->connect_error) {
 				echo "Connection Error";
 			}
-			
+
 			$sql = "SELECT * FROM login RIGHT JOIN patient ON  (login.Health_Card_No = patient.HEALTH_NO)";
 
 			$result = $conn -> query($sql);
 
 			while($row = $result->fetch_assoc()) {
-   				$name = $row['Name'];
-   				$address = $row['ADDRESS'];
-   				$email = $row['EMAIL'];
-   				$phone = $row['PHN_NO'];
+   				$name = $row['name'];
+   				$address = $row['address'];
+   				$email = $row['email'];
+   				$phone = $row['phone'];
    				printf("<b> Name: </b> %s", $name);
-   				
+
 			}
 
-			
+
 
 		?>
 

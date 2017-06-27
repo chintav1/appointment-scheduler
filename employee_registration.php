@@ -19,7 +19,7 @@
 
 		//Connect to the server
 			$conn = mysqli_connect($servername, $dbusername,"", $db);
-			
+
 			if ($conn->connect_error) {
 				echo "Connection Error";
 			}
@@ -29,10 +29,10 @@
 				echo "Fields with a * are required";
 				die();
 			}
-				$sql = "INSERT INTO employee(NAME, EMAIL, CERTIFICATION) VALUES ('$name', '$email', '$certificate')";
+				$sql = "INSERT INTO employee(name, email, certification) VALUES ('$name', '$email', '$certificate')";
 				$login = "INSERT INTO login(username, pass, Name) VALUES ('$username', '$password', '$name')";
-				$clinic = "INSERT INTO clinic(NAME, ADDRESS, PHN_NO, HOURS) VALUES ('$clinic_name', '$clinic_address', '$clinic_phone', '$clinic_hours')";
-				
+				$clinic = "INSERT INTO clinic(name, address, phone, hours) VALUES ('$clinic_name', '$clinic_address', '$clinic_phone', '$clinic_hours')";
+
 				if ($conn->query($sql) == TRUE) {
     				echo "New employee record created";
 				}
@@ -51,4 +51,3 @@
 
 	</body>
 </html>
-

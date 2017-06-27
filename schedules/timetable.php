@@ -34,7 +34,7 @@
 				<table>
 					<thead>
 						<tr>
-							<th>Denist Availability<br/><br/>
+							<th><br/>Denist Availability<br/>
 
 							</th>
 							<?php
@@ -90,14 +90,14 @@
 								for ($i =0; $i <5 ;$i++){
 									$thisdate = date("Y-m-d", strtotime("+{$i} days", strtotime('monday this week')));
 									$thistime = $atime.":00";
-									$sql ="SELECT * FROM employee WHERE EMP_ID IN (SELECT employee_id FROM schedule WHERE avalible_date = '$thisdate' AND avalible_time = '$thistime' AND patient_id IS NULL)";
+									$sql ="SELECT * FROM employee WHERE id IN (SELECT employee_id FROM schedule WHERE avalible_date = '$thisdate' AND avalible_time = '$thistime' AND patient_id IS NULL)";
 									$result = $conn->query($sql);
 									echo "<td>";
 									// echo $sql;
 								 	if($result->num_rows > 0){
 										while($row = $result->fetch_assoc()){
 											echo "<li>";
-											echo "<a href='booking.php?eid=".$row['EMP_ID']."&date=".$thisdate."&time=".$thistime."&pid=".$pid."'>\n";
+											echo "<a href='booking.php?eid=".$row['id']."&date=".$thisdate."&time=".$thistime."&pid=".$pid."'>\n";
 											echo $row['NAME'];
 											echo "</a></li>\n";
 										}
