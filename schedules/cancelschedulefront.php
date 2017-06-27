@@ -16,7 +16,7 @@
         $result = mysqli_query($conn, $nopatient);
         $num_rows = mysqli_num_rows($result);
         if($num_rows > 0){
-            echo "Your scheduled time with no patient:"
+            echo "Your scheduled time with no patient:";
             echo '<ul style="list-style-type:none">';
             while($row = $result->fetch_assoc()){
                echo '<li>';
