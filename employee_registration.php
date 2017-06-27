@@ -30,9 +30,9 @@
 				die();
 			}
 				$sql = "INSERT INTO employee(NAME, EMAIL, CERTIFICATION) VALUES ('$name', '$email', '$certificate')";
-				$login = "INSERT INTO login(username, password, Name) VALUES ('$username', '$pass', 'name')";
+				$login = "INSERT INTO login(username, password, Name) VALUES ('$username', '$password', 'name')";
 				
-				if (($conn->query($sql) === TRUE) && ($con-> query($login) == TRUE)) {
+				if (($conn->query($sql) === TRUE) && ($conn -> query($login) == TRUE)) {
     				echo "New employee record created successfully";
 				}
 
