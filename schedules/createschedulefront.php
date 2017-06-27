@@ -4,14 +4,14 @@
 	<body>
         <?php
         $eid= $_GET['pid'];
-		$today = strtotime('today');
+		
 
         ?>
 		<form action="createschedule.php" method="post">
             Create new schedules:
             <input type="hidden" name="eid" value="<?php echo $eid;?>"/><br>
 			Date:<br>
-			<input type="date" name="date" min='today'><br>
+			<input type="date" name="date" ><br>
 
 		    times:<br>
              <input type="checkbox" name="10" value="10"> 10:00 AM<br>
