@@ -135,7 +135,7 @@
 				   while($row = $result->fetch_assoc()){
 					   echo '<li>';
 					   echo "<a href='delbooking.php?eid=".$row['id']."&deldate=".$row['avalible_date']."&deltime=".$row['avalible_time']."&pid=".$pid."'>";
-					   echo "cancel &#9";
+					   echo "CANCEL &#9";
 					   echo "</a>";
 					   echo $row['avalible_date']." at ".$row['avalible_time']." with ".$row['name'];
 					   echo '</li>';
