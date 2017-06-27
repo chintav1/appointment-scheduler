@@ -37,7 +37,7 @@
 			   			}
 					}
 					else{
-							echo "schedule already exist on '$date' at '$time' <br>";
+							echo "<font color='red'>schedule already exist on '$date' at '$time' </font><br>";
 					}
                 }
             }
