@@ -27,7 +27,7 @@
 		if ($pt == 'employee'){
 			echo "Welcome, $username, your Employee ID is $pid"."<br/>";
 			echo '<a href="schedules/createschedulefront.php?pid='.$pid.'">Add new schedule</a>';
-			echo '<a href="schedules/cancelschedulefront.php?pid='.$pid.'">remove existing schedule</a>';
+			echo '&nbsp;&nbsp;&nbsp;&nbsp;<a href="schedules/cancelschedulefront.php?pid='.$pid.'">remove existing schedule</a>';
 		}
 		if ($pt == 'patient'){
 			echo "Welcome, $username, your Patient ID is $pid"."<br/>";
