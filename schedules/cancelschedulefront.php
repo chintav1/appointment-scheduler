@@ -3,8 +3,15 @@
 	<body>
         <?php
         $eid= $_GET['pid'];
+        $servername = "127.0.0.1";
+        $dbusername = "root";
+        $db = "sct";
 
-
+        $conn = new mysqli($servername, $dbusername,"", $db);
+        if ($conn->connect_error) {
+            echo "Connection Error";
+        }
+        
         echo "Your existing schedules:";
 
         $sql = "SELECT s.avalible_date, s.avalible_time, s.patient_id, p.name, FROM schedule AS s, patient AS p WHERE s.patient_id=p.id AND s.employee_id='$eid' ORDER BY s.avalible_date";
