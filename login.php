@@ -26,6 +26,7 @@
     	echo "Welcome, $username, your Patient ID is $pid"."<br/>";
     	echo '<a href="schedules/timetable.php?pid='.$pid.'&date='.$date.'">Schedule</a>';
     	echo '&nbsp;&nbsp;&nbsp;&nbsp;<a href="profile.php">Profile</a>';
+    	echo '&nbsp;&nbsp;&nbsp;&nbsp;<a href="medical_record.php">Medical Record</a>'
 
     	die();
 
