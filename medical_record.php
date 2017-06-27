@@ -1,7 +1,6 @@
 <html>
 	<body>
 		<?php
-			header("Location: http://70.77.112.86/record.php");
 			$PID = $_POST["PID"];
 			$allergy = $_POST["allergies"];
 			$note = $_POST["note"];
