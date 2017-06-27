@@ -12,7 +12,6 @@
             echo "Connection Error";
         }
 
-        echo "delecting schedule for id: '$eid'";
         $sql = "SELECT s.employee_id, s.avalible_date, s.avalible_time,  p.name FROM schedule AS s, patient AS p WHERE s.patient_id=p.id AND s.employee_id='$eid' ORDER BY s.avalible_date";
         $result = mysqli_query($conn, $sql);
         $num_rows = mysqli_num_rows($result);
