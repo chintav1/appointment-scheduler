@@ -17,8 +17,9 @@
 
 	$result = mysqli_query($conn, $sql);
 	$num_rows = mysqli_num_rows($result);
-	$pt =$result['type'];
-	$pid = $result['type_id'];
+	$row =$result -> fetch_assoc();
+	$pt = $row['type'];
+	$pid = $row['type_id'];
 	$date =date('Y-m-d',strtotime('monday this week'));
 	if($num_rows > 0) {
 
