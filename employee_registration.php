@@ -13,8 +13,6 @@
 			$password = $_POST["pass"];
 
 		//Server information
-			$username = $_POST["username"];
-			$password = $_POST["pass"];
 			$servername = "127.0.0.1";
 			$dbusername = "root";
 			$db = "sct";
@@ -31,13 +29,13 @@
 				echo "Fields with a * are required";
 				die();
 			}
-		//Queries based on type of employee
-
 				$sql = "INSERT INTO employee(NAME, EMAIL, CERTIFICATION) VALUES ('$name', '$email', '$certificate')";
+				$login = "INSERT INTO login(username, password, Name) VALUES ('$username', '$pass', 'name')";
 				
-				if ($conn->query($sql) === TRUE) {
+				if (($conn->query($sql) === TRUE) && ($con-> query($login) == TRUE)) {
     				echo "New employee record created successfully";
 				}
+
 
 		?>
 

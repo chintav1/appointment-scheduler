@@ -2,13 +2,13 @@
 	<body>
 		<form action="employee_registration.php" method="post">
 
-			Name:  (*)<br>
+			Name: *<br>
 			<input type="text" name="name"><br>
 
 			Email: <br>
 			<input type="email" name="email"><br>
 
-			Certification:  (*) <br>
+			Certification: * <br>
 			<select name = "Certification">
 				<option value = "">Select...</option>
 				<option value = "Dentist">Dentist</option>
