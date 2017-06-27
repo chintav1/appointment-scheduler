@@ -24,8 +24,8 @@
 	if($num_rows > 0) {
 
     	echo "Welcome, $username"."<br/>";
-    	echo '<a href="http://70.77.112.86/schedules/timetable.php?pid='.$pid.'&date='.$date.'">Schedule</a>';
-    	echo '&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://70.77.112.86/profile.php">Profile</a>';
+    	echo '<a href="schedules/timetable.php?pid='.$pid.'&date='.$date.'">Schedule</a>';
+    	echo '&nbsp;&nbsp;&nbsp;&nbsp;<a href="profile.php">Profile</a>';
 
     	die();
 
