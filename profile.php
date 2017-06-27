@@ -14,7 +14,7 @@
 
 			$sql = "SELECT name FROM login AND patient WHERE (login.type_id = patient.id AND login.type = 'patient')";
 
-			$result = $conn -> query($sql);
+			$result = mysqli_query($conn, $sql);
 
 			while($row = $result -> fetch_assoc()) {
    				$name = $row['name'];
