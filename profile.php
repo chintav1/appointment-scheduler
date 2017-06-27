@@ -12,7 +12,7 @@
 				echo "Connection Error";
 			}
 
-			$sql = "SELECT * FROM login RIGHT JOIN patient ON  (login.type_id = patient.id)";
+			$sql = "SELECT * FROM login RIGHT JOIN patient ON  (login.type_id = patient.id AND login.type = "patient")";
 
 			$result = $conn -> query($sql);
 
