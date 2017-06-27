@@ -25,7 +25,7 @@
 
     	echo "Welcome, $username, your Patient ID is $pid"."<br/>";
 		if ($pt == 'employee'){
-			echo '<a href="schedules/createschedulefront.php?pid='.$pid.'&date='.$date.'">Add new schedule</a>';
+			echo '<a href="schedules/createschedulefront.php?pid='.$pid.'">Add new schedule</a>';
 		}
 		if ($pt == 'patient'){
     		echo '<a href="schedules/timetable.php?pid='.$pid.'&date='.$date.'">Schedule</a>';

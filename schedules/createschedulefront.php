@@ -2,11 +2,13 @@
 <html>
 
 	<body>
-
+        <?php
+        $eid= $_GET['pid']
+         ?>
 		<form action="createschedule.php" method="post">
             Employee id: <br>
             <input type="number" name="eid"><br>
-
+            <input type="hidden" name="eid" value="<?php echo $eid;?>" />
 			Date:<br>
 			<input type="date" name="date"><br>
 
