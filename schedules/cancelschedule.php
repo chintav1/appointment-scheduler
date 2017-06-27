@@ -19,10 +19,10 @@
 
 
 			if ($conn->query($sql) == TRUE) {
-    			echo "appointment canceled <br>";
-                echo '<a href="timetable.php?pid='.$pid.'&date='.$date.'">';
-                echo "go back";
-                echo "</a>";
+                echo "appointment canceled <br>";
+                echo '<a href="schedules/createschedulefront.php?pid='.$eid.'">Add new schedule</a>';
+                echo '&nbsp;&nbsp;&nbsp;&nbsp;<a href="schedules/cancelschedulefront.php?pid='.$eid.'">remove existing schedule</a>';
+
 			}
 			else {
     			echo "Error: " . $sql . "<br>" . $conn->error;
