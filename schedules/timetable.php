@@ -20,7 +20,17 @@
 
 			<header>
 				<h1 align = "center" >Schedule your appointment </h1>
-
+				<?php
+				$todaydate = date('Y-m-d');
+				$year=date('Y');
+				$week=date('W');
+				$openingdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+				$thismonday =$_GET['date'];
+				$pid=$_GET['pid'];
+				$nextmonday = date("Y-m-d", strtotime("monday next week"));
+				$lastmonday= date("Y-m-d", strtotime("monday last week"));
+				echo "<h1 align = "center" > Week of: '$thismonday'</h1>";
+				 ?>
 				<!-- <nav class="codrops-demos">
 					<a href="index.html">Basic Usage</a>
 					<a class="current-demo" href="index2.html">Biaxial Headers</a>
@@ -30,7 +40,11 @@
 			<div class="component">
 
 				<h2>Change Date</h2>
-
+				<?php
+				echo '<a href="schedules/timetable.php?pid='.$pid.'&date='.$lastmonday.'">Prev Week</a><br>';
+				echo '<a href="schedules/timetable.php?pid='.$pid.'&date='.$nextmonday.'">Next Week</a><br>';
+				?>
+				<button
 				<table>
 					<thead>
 						<tr>
@@ -38,12 +52,7 @@
 
 							</th>
 							<?php
-							$todaydate = date('Y-m-d');
-							$year=date('Y');
-							$week=date('W');
-							$openingdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-							$thismonday =$_GET['date'];
-							$pid=$_GET['pid'];
+
 							$j = 0;
 
 							foreach ($openingdays as $weekday) {
