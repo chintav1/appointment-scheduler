@@ -17,11 +17,11 @@
 
 			$sql = "UPDATE schedule SET patient_id= '$pid' WHERE employee_id='$eid' AND avalible_date='$date' AND avalible_time='$time'";
 
-
+			$thismonday = date('Y-m-d',strtotime('monday this week'));
 
 			if ($conn->query($sql) == TRUE) {
     			echo "appointment booked <br>";
-                echo '<a href="timetable.php?pid='.$pid.'&date='.$date.'">';
+                echo '<a href="timetable.php?pid='.$pid.'&date='.$thismonday.'">';
                 echo "go back";
                 echo "</a>";
 			}
