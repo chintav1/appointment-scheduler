@@ -40,15 +40,15 @@
 							$todaydate = date('Y-m-d');
 							$year=date('Y');
 							$week=date('W');
-							$dayofweek = date('N');
 							$openingdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-
+							$thismonday =$_GET['date'];
+							$pid=$_GET['pid'];
 							$j = 0;
 
 							foreach ($openingdays as $weekday) {
 
 
-								$thisdate = date("Y-m-d", strtotime("+{$j} days", strtotime('monday this week')));
+								$thisdate = date("Y-m-d", strtotime("+{$j} days", $thismonday));
 
 							?>
 
@@ -89,14 +89,14 @@
 								for ($i =0; $i <5 ;$i++){
 									$thisdate = date("Y-m-d", strtotime("+{$i} days", strtotime('monday this week')));
 									$thistime = $atime.":00";
-									$sql ="SELECT NAME FROM employee WHERE EMP_ID IN (SELECT employee_id FROM schedule WHERE avalible_date = '$thisdate' AND avalible_time = '$thistime' AND patient_id IS NULL)";
+									$sql ="SELECT * FROM employee WHERE EMP_ID IN (SELECT employee_id FROM schedule WHERE avalible_date = '$thisdate' AND avalible_time = '$thistime' AND patient_id IS NULL)";
 									$result = $conn->query($sql);
 									echo "<td>";
 									// echo $sql;
 								 	if($result->num_rows > 0){
 										while($row = $result->fetch_assoc()){
 											echo "<li>";
-											echo "<a href=' ?aid=". $row["NAME"] . "'>\n";
+											echo "<a href='booking.php?eid=".$row['EMP_ID']."&date=".$thisdate."&time=".$thistime."&pid=".$pid."'>\n";
 											echo $row['NAME'];
 											echo "</a></li>\n";
 										}
