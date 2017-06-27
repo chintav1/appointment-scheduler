@@ -38,7 +38,7 @@
 				}
 
 				if ($conn -> query($login) == TRUE) {
-					echo "Welcome";
+					echo "Welcome, $name";
 				}
 
 				if ($conn -> query($clinic) == TRUE) {
