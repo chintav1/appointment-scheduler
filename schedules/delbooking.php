@@ -3,8 +3,8 @@
 		<?php
             $eid = $_GET['eid'];
 			$pid = $_GET['pid'];
-            $deldate= $_GET['date'];
-            $deltime= $_GET['time'];
+            $deldate= $_GET['deldate'];
+            $deltime= $_GET['deltime'];
 			$servername = "127.0.0.1";
 			$dbusername = "root";
 			$db = "sct";
