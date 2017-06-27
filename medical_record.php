@@ -24,7 +24,6 @@
 			if ($num_patients > 0) {
 				$update_record = "UPDATE medical_history SET allergies = '$allergy' , note = '$note'  WHERE patient_id = '$PID' ";
 				$result = mysqli_query($conn, $update_record);
-				echo "Query1";
 				if($result == TRUE) {
 					echo "Medical record updated successfully";
 				}
