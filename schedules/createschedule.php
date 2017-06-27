@@ -24,7 +24,7 @@
                 if (isset($_POST[$timename])){
                     $time=$timename.":00:00";
 					$checking = "SELECT * FROM schedule WHERE employee_id='$eid' AND avalible_date= '$date' AND avalible_time= '$time'";
-					$result =$conn->query($sql);
+					$result = $conn->query($checking);
  					if(mysqli_num_rows($result) <= 0)
   					{
 	                    $sql = "INSERT INTO schedule(employee_id,avalible_date,avalible_time) VALUES ('$eid','$date','$time')";
