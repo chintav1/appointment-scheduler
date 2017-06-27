@@ -42,7 +42,7 @@
                echo "CANCEL &#9";
                echo "</a>";
                echo $row['avalible_date']." at ".$row['avalible_time']." with ";
-               echo "<a href='showmedical_history.php?eid=".$row['patient_id']."'>";
+               echo "<a href='showmedical_history.php?pid=".$row['patient_id']."'>";
                echo $row['name'];
                echo "</a>";
                echo '</li>';
