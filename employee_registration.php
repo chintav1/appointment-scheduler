@@ -33,7 +33,7 @@
 				$login = "INSERT INTO login(username, pass, Name) VALUES ('$username', '$password', '$name')";
 				$clinic = "INSERT INTO clinic(NAME, ADDRESS, PHN_NO, HOURS) VALUES ('$clinic_name', '$clinic_address', '$clinic_phone', '$clinic_hours')";
 				
-				if ($conn->query($sql) === TRUE) {
+				if ($conn->query($sql) == TRUE) {
     				echo "New employee record created successfully";
 				}
 
