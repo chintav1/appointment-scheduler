@@ -13,13 +13,15 @@
 		echo "Connection Error";
 	}
 
-	$sql = "SELECT username, pass FROM login WHERE ((username = '$username') AND (pass = '$password'))";
+	$sql = "SELECT * FROM login WHERE ((username = '$username') AND (pass = '$password'))";
 
 	$result = mysqli_query($conn, $sql);
 	$num_rows = mysqli_num_rows($result);
-	$pid =1;
+	$pt =$result['type'];
+	$pid = $result['type_id'];
 	$date =date('Y-m-d',strtotime('monday this week'));
 	if($num_rows > 0) {
+
     	echo "Welcome, $username"."<br/>";
     	echo '<a href="http://70.77.112.86/schedules/timetable.php?pid='.$pid.'&date='.$date.'">Schedule</a>';
     	echo '&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://70.77.112.86/profile.php">Profile</a>';
