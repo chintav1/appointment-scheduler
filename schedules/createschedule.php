@@ -19,7 +19,7 @@
             $timesopen = ['10','11','12','13','14','15','16','17'];
 
 			if (strtotime($date) < strtotime('today')){
-				echo "That date is in the past";
+				echo "That date is in the past <br>";
 			}
 			else {
 	            foreach ($timesopen as $timename) {
