@@ -54,7 +54,8 @@
 			$num_rows_insurance = mysqli_num_rows($insurance_result);
 
 			if ($num_rows_insurance < 1) {
-				$insert_insurance = "INSERT INTO insurance VALUES ('$policy_number', '$insurance_company' ";
+				$insert_insurance = "INSERT INTO insurance VALUES ('$policy_number', '$insurance_company') ";
+				$insert_result = mysqli_query($insert_insurance);
 			}
 
 			if($conn->query($sql1) == TRUE) {
