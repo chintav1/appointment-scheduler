@@ -98,7 +98,7 @@
 										while($row = $result->fetch_assoc()){
 											echo "<li>";
 											echo "<a href='booking.php?eid=".$row['id']."&date=".$thisdate."&time=".$thistime."&pid=".$pid."'>\n";
-											echo $row['NAME'];
+											echo "Dr. ".$row['name'];
 											echo "</a></li>\n";
 										}
 									}
