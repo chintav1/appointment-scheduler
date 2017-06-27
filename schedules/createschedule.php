@@ -29,12 +29,15 @@
   					{
 	                    $sql = "INSERT INTO schedule(employee_id,avalible_date,avalible_time) VALUES ('$eid','$date','$time')";
 						if ($conn->query($sql) == TRUE) {
-			   				echo "appointment created on '$date' at '$time' <br>";
+			   				echo "schedule created on '$date' at '$time' <br>";
 
 			   			}
 			   			else {
 			   				echo "Error: " . $sql . "<br>" . $conn->error;
 			   			}
+					}
+					else{
+							echo "schedule already exist on '$date' at '$time' <br>";
 					}
                 }
             }
