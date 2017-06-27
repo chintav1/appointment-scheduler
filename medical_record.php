@@ -13,7 +13,7 @@
 				echo "Connection Error";
 			}
 
-			$sql = "INSERT INTO medical_history(patient_id, allergies, note) VALUES ('$PID', '$allergy', '$note')";
+			$sql = "INSERT INTO medical_history VALUES ('$PID', '$allergy', '$note')";
 
 			if ($conn -> query($sql) == TRUE) {
 				echo "Medical record updated successfully";
