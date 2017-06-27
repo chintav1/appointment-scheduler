@@ -12,7 +12,7 @@
 				echo "Connection Error";
 			}
 
-			$sql = "SELECT patient.name, patient.address, patient.email, patient.phone FROM login, patient WHERE login.type_id = patient.id AND login.type = 'patient')";
+			$sql = "SELECT patient.name, patient.address, patient.email, patient.phone FROM login, patient WHERE (login.type_id = patient.id AND login.type = 'patient')";
 
 			$result = mysqli_query($conn, $sql);
 			$num_rows = mysqli_num_rows($result);
