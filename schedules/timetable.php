@@ -34,7 +34,8 @@
 				<table>
 					<thead>
 						<tr>
-							<th>Denist Availability<br/>
+							<th>Denist Availability<br/><br/>
+
 							</th>
 							<?php
 							$todaydate = date('Y-m-d');
