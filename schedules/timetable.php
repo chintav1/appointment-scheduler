@@ -29,7 +29,7 @@
 				$pid=$_GET['pid'];
 				$nextmonday = date("Y-m-d", strtotime("monday next week"));
 				$lastmonday= date("Y-m-d", strtotime("monday last week"));
-				echo "<h1 align = "center" > Week of: '$thismonday'</h1>";
+				echo "<h1 align = 'center' > Week of: '$thismonday'</h1>";
 				 ?>
 				<!-- <nav class="codrops-demos">
 					<a href="index.html">Basic Usage</a>
