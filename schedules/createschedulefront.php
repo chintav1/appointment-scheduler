@@ -1,14 +1,14 @@
--- add a front for this -->
+<!--  add a front for this -->
 <html>
 
 	<body>
         <?php
         $eid= $_GET['pid']
+        echo "your Employee id is: '$eid'";
          ?>
 		<form action="createschedule.php" method="post">
-            Employee id: <br>
-            <input type="number" name="eid"><br>
-            <input type="hidden" name="eid" value="<?php echo $eid;?>" />
+            Create new schedules:
+            <input type="hidden" name="eid" value="<?php echo $eid;?>"/><br>
 			Date:<br>
 			<input type="date" name="date"><br>
 

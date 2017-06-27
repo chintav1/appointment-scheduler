@@ -23,11 +23,13 @@
 	$date =date('Y-m-d',strtotime('monday this week'));
 	if($num_rows > 0) {
 
-    	echo "Welcome, $username, your Patient ID is $pid"."<br/>";
+
 		if ($pt == 'employee'){
+			echo "Welcome, $username, your Employee ID is $pid"."<br/>";
 			echo '<a href="schedules/createschedulefront.php?pid='.$pid.'">Add new schedule</a>';
 		}
 		if ($pt == 'patient'){
+			echo "Welcome, $username, your Patient ID is $pid"."<br/>";
     		echo '<a href="schedules/timetable.php?pid='.$pid.'&date='.$date.'">Schedule</a>';
 			echo '&nbsp;&nbsp;&nbsp;&nbsp;<a href="profile.php">Profile</a>';
 			echo '&nbsp;&nbsp;&nbsp;&nbsp;<a href="record.php">Medical Record</a>';
