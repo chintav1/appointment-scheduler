@@ -41,8 +41,19 @@
 				die();
 			}
 
+			//Checking for existing insurance companies in database
+			$insurance_check = "SELECT * FROM insurance WHERE policy_no = '$policy_number' AND company = '$insurance_company'";
+			$insurance_result = mysqli_query($conn, $insurance_check);
+			$num_rows_insurance = mysqli_num_rows($insurance_result);
+
+			//If insurance company does not exist, insert it into the insurance table
+			if ($num_rows_insurance < 1) {
+				$insert_insurance = "INSERT INTO insurance VALUES ('$policy_number', '$insurance_company') ";
+				$insert_result = mysqli_query($conn, $insert_insurance);
+			}
+
 			//Inserting new patient into the database
-			$sql = "INSERT INTO patient (health_no, name, dob, address, phone, email, ins_policy_no) VALUES ('$health', '$name', '$DOB', '$address', '$phone', '$email', '$policy_number')";
+			$sql = "INSERT INTO patient (health_no, name, dob, address, phone, email, ins_policy_no) VALUES ('$health', '$name', '$DOB', '$address', '$phone', '$email', (SELECT policy_no FROM insurance WHERE policy_no = '$policy_number'))";
 
 			//Successful insertion
 			if ($conn->query($sql) == TRUE) {
@@ -55,16 +66,6 @@
 			$id = $row['id'];										
 			$sql1 = "INSERT INTO login (username, pass, type, type_id) VALUES ('$username','$password', 'patient', '$id')";
 
-			//Checking for existing insurance companies in database
-			$insurance_check = "SELECT * FROM insurance WHERE policy_no = '$policy_number' AND company = '$insurance_company'";
-			$insurance_result = mysqli_query($conn, $insurance_check);
-			$num_rows_insurance = mysqli_num_rows($insurance_result);
-
-			//If insurance company does not exist, insert it into the insurance table
-			if ($num_rows_insurance < 1) {
-				$insert_insurance = "INSERT INTO insurance VALUES ('$policy_number', '$insurance_company') ";
-				$insert_result = mysqli_query($conn, $insert_insurance);
-			}
 
 			//execute the insertion into login table
 			if($conn->query($sql1) == TRUE) {
