@@ -14,7 +14,7 @@
 			}
 
 			$sql = "SELECT l.username FROM login AS l, schedules AS s WHERE l.type = 'patient' AND l.type_id = s.patient_id AND s.employee_id='$eid' AND avalible_date = '$deldate' AND avalible_time='$deltime'";
-			$result = mysqli_query($conn,$sql);
+			$result = $conn->query($sql);
 			$row = mysqli_fetch_assoc($result);
 			$username = $row['username'];
 
