@@ -45,6 +45,7 @@
 				while ($row =$result -> fetch_assoc()){
 					echo '<a href="dismiss.php?id='.$row['id'].'&pid='.$pid.'">DISMISS</a>';
 					echo '&nbsp;'.$row['message'];
+					echo '<br>';
 				}
 			}
 		}
