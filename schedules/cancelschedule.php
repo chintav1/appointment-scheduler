@@ -12,9 +12,9 @@
 			if ($conn->connect_error) {
 				echo "Connection Error";
 			}
-			
+
 			$sql = "SELECT l.username FROM login AS l, schedules AS s WHERE l.type = 'patient' AND l.type_id = s.patient_id AND s.employee_id='$eid' AND avalible_date = '$deldate' AND avalible_time='$deltime'";
-			$result = mysqli_query($con,$sql);
+			$result = mysqli_query($conn,$sql);
 			$row = mysqli_fetch_assoc($result);
 			$username = $row['username'];
 
@@ -25,7 +25,7 @@
 
 			if ($conn->query($sql) == TRUE) {
 				$sql = "INSERT INTO notification(login_user,message) VALUES ('$username','Your appointment on '.$deldate.' is canceled')"
-				mysqli_query($con,$sql);
+				mysqli_query($conn,$sql);
 
 
 				echo "appointment canceled <br>";
