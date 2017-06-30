@@ -45,7 +45,7 @@
 			$sql = "INSERT INTO patient (health_no, name, dob, address, phone, email, ins_policy_no) VALUES ('$health', '$name', '$DOB', '$address', '$phone', '$email', '$policy_number')";
 
 			//Successful insertion
-			if ($conn->query($sql) === TRUE) {
+			if ($conn->query($sql) == TRUE) {
     			echo "New patient record created successfully <br>";
 			}
 			//Fetch the patient's ID according to their information and store it in the login table
