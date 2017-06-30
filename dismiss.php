@@ -26,7 +26,7 @@
     echo '<a href="schedules/timetable.php?pid='.$pid.'&date='.$date.'">Schedule</a>';
     echo '&nbsp;&nbsp;&nbsp;&nbsp;<a href="profile.php?pid='.$pid.'">Profile</a>';
     echo '&nbsp;&nbsp;&nbsp;&nbsp;<a href="record.php?pid='.$pid.'">Medical Record</a>';
-    echo "<br><br><br></br>";
+    echo "<br><br><br><br/>";
 
     //Nodifacation
     $sql = "SELECT * FROM notification WHERE login_user = '$username'";
