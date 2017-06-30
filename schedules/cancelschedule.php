@@ -12,14 +12,23 @@
 			if ($conn->connect_error) {
 				echo "Connection Error";
 			}
-
+			
+			$sql = "SELECT l.username FROM login AS l, schedules AS s WHERE l.type = 'patient' AND l.type_id = s.patient_id AND s.employee_id='$eid' AND avalible_date = '$deldate' AND avalible_time='$deltime'";
+			$result = mysqli_query($con,$sql);
+			$row = mysqli_fetch_assoc($result);
+			$username = $row['username'];
 
 			$sql = "DELETE FROM schedule WHERE employee_id='$eid' AND avalible_date='$deldate' AND avalible_time='$deltime'";
 
 
 
+
 			if ($conn->query($sql) == TRUE) {
-                echo "appointment canceled <br>";
+				$sql = "INSERT INTO notification(login_user,message) VALUES ('$username','Your appointment on '.$deldate.' is canceled')"
+				mysqli_query($con,$sql);
+
+
+				echo "appointment canceled <br>";
                 echo '<a href="createschedulefront.php?pid='.$eid.'">Add new schedule</a>';
                 echo '&nbsp;&nbsp;&nbsp;&nbsp;<a href="cancelschedulefront.php?pid='.$eid.'">remove existing schedule</a>';
 
