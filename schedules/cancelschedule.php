@@ -8,7 +8,7 @@
 			$dbusername = "root";
 			$db = "sct";
             $date = date('Y-m-d',strtotime("monday this week"));
-			$conn = new mysqli($servername, $dbusername,"", $db);
+			$conn = mysqli_connect($servername, $dbusername,"", $db);
 			if ($conn->connect_error) {
 				echo "Connection Error";
 			}
