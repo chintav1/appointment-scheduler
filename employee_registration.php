@@ -29,9 +29,15 @@
 				echo "Fields with a * are required";
 				die();
 			}
+				$sql = " SELECT id FROM employee WHERE certification ='Manager'";
+				$result=$conn -> query($sql);
+				$row=$result->fetch_assoc();
+				
+				$super_id=$row['id'];
+
 				$sql = "INSERT INTO employee(clinic_address, clinic_phone, name, email, certification, super_id) VALUES
 						((SELECT address FROM clinic WHERE address = '$clinic_address'), (SELECT phone FROM clinic WHERE phone = '$clinic_phone'),
-						'$name', '$email', '$certificate', (SELECT id FROM employee WHERE certification ='Manager'))";
+						'$name', '$email', '$certificate', '$super_id')";
 
 				if ($conn->query($sql) == TRUE) {
     				echo "New employee record created<br>";
