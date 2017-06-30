@@ -29,7 +29,9 @@
 				echo "Fields with a * are required";
 				die();
 			}
-				$sql = "INSERT INTO employee(name, email, certification) VALUES ('$name', '$email', '$certificate')";
+				$sql = "INSERT INTO employee(clinic_address, clinic_phone, name, email, certification) VALUES 
+						((SELECT address FROM clinic WHERE address = '$clinic_address'), (SELECT phone FROM clinic WHERE phone = '$clinic_phone'),
+						'$name', '$email', '$certificate')";
 
 				if ($conn->query($sql) == TRUE) {
     				echo "New employee record created<br>";
