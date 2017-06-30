@@ -15,7 +15,7 @@
 
 			$sql = "SELECT patient_id FROM schedules WHERE employee_id='$eid' AND avalible_date = '$deldate' AND avalible_time='$deltime'";
 			$result = $conn->query($sql);
-			$row = mysqli_fetch_assoc($result);
+			$row = $result->fetch_assoc();
 			$pid = $row['patient_id'];
 			if ($pid != null){
 				$sql = "SELECT username FROM login WHERE type ='patient' AND type_id = '$pid'";
@@ -24,7 +24,7 @@
 				$username = $row['username'];
 
 
-				$sql = "INSERT INTO notification(login_user,message) VALUES ('$username','Your appointment on '.$deldate.' is canceled')";
+				$sql = "INSERT INTO notification(login_user,message) VALUES ('$username','Your appointment is canceled')";
 				$conn->query($sql);
 			}
 
