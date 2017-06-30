@@ -13,19 +13,27 @@
 				echo "Connection Error";
 			}
 
-			$sql = "SELECT l.username FROM login AS l, schedules AS s WHERE l.type = 'patient' AND l.type_id = s.patient_id AND s.employee_id='$eid' AND avalible_date = '$deldate' AND avalible_time='$deltime'";
+			$sql = "SELECT patient_id FROM schedules WHERE employee_id='$eid' AND avalible_date = '$deldate' AND avalible_time='$deltime'";
 			$result = $conn->query($sql);
 			$row = mysqli_fetch_assoc($result);
-			$username = $row['username'];
+			$pid = $row['patient_id'];
+			if ($pid != null){
+				$sql = "SELECT username FROM login WHERE type ='patient' AND type_id = '$pid'";
+				$result = $conn->query($sql);
+				$row = mysqli_fetch_assoc($result);
+				$username = $row['username'];
+
+
+				$sql = "INSERT INTO notification(login_user,message) VALUES ('$username','Your appointment on '.$deldate.' is canceled')";
+				$conn->query($sql);
+			}
+
+
 
 			$sql = "DELETE FROM schedule WHERE employee_id='$eid' AND avalible_date='$deldate' AND avalible_time='$deltime'";
 
 
-
-
 			if ($conn->query($sql) == TRUE) {
-				$sql = "INSERT INTO notification(login_user,message) VALUES ('$username','Your appointment on '.$deldate.' is canceled')";
-			  	$conn->query($sql);
 
 
 				echo "appointment canceled <br>";
