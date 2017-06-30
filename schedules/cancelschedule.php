@@ -25,7 +25,7 @@
 
 			if ($conn->query($sql) == TRUE) {
 				$sql = "INSERT INTO notification(login_user,message) VALUES ('$username','Your appointment on '.$deldate.' is canceled')"
-				$conn->query($sql);
+			    $fk =	$conn->query($sql);
 
 
 				echo "appointment canceled <br>";
