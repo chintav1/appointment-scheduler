@@ -3,6 +3,7 @@
 <?php
 
 	$id = $_GET["id"];
+    $pid = $_GET["pid"];
 	$servername = "127.0.0.1";
 	$dbusername = "root";
 	$db = "sct";
@@ -12,8 +13,13 @@
 		echo "Connection Error";
 	}
 
-	$sql = "DELETE FROM notification WHERE id= '$id'";
+    $sql = "SELECT * FROM login WHERE type_id ='$pid' AND type='patient'";
+    $result =mysqli_query($conn,$sql);
+    $row = mysqli_fetch_assoc($result);
+    $username = $row['username'];
+    $date = date('Y-m-d', strtotime('monday this week'));
 
+	$sql = "DELETE FROM notification WHERE id= '$id'";
     mysqli_query($conn, $sql);
 
     echo "Welcome, $username, your Patient ID is $pid"."<br/>";
