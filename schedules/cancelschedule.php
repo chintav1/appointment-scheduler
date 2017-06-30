@@ -13,10 +13,10 @@
 				echo "Connection Error";
 			}
 
-			$sql = "SELECT patient_id FROM schedules WHERE employee_id='$eid' AND avalible_date = '$deldate' AND avalible_time='$deltime'";
-			$result = $conn->query($sql);
-
-			if ($result == TRUE ){
+			$sql = "SELECT * FROM schedules WHERE employee_id='$eid' AND avalible_date = '$deldate' AND avalible_time='$deltime'";
+			$result = mysqli_query($conn, $sql);
+	        $num_rows = mysqli_num_rows($result);
+	        if($num_rows > 0){
 				$row = $result->fetch_assoc();
 				$pid = $row['patient_id'];
 				$sql = "SELECT username FROM login WHERE type ='patient' AND type_id = '$pid'";
