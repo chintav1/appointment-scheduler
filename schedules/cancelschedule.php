@@ -13,7 +13,7 @@
 				echo "Connection Error";
 			}
 
-			$sql = "SELECT * FROM schedules WHERE employee_id='$eid' AND avalible_date = '$deldate' AND avalible_time='$deltime'";
+			$sql = "SELECT * FROM schedule WHERE employee_id='$eid' AND avalible_date = '$deldate' AND avalible_time='$deltime'";
 			$result = mysqli_query($conn, $sql);
 	        $num_rows = mysqli_num_rows($result);
 	        if($num_rows > 0){
