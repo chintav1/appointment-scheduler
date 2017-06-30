@@ -13,7 +13,8 @@
 				<option value = "">Select...</option>
 				<option value = "Dentist">Dentist</option>
 				<option value = "Hygenist">Hygenist</option>
-				<option value = "Secretary">Secretary</option>  
+				<option value = "Secretary">Secretary</option>
+				<option value = "Manager">Manager</option>  
 			</select>	<br>
 
 			Clinic Name: * <br>
