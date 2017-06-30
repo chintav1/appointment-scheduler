@@ -53,7 +53,8 @@
 			}
 
 			//Inserting new patient into the database
-			$sql = "INSERT INTO patient (health_no, name, dob, address, phone, email, ins_policy_no) VALUES ('$health', '$name', '$DOB', '$address', '$phone', '$email', (SELECT policy_no FROM insurance WHERE policy_no = '$policy_number'))";
+			$sql = "INSERT INTO patient (health_no, name, dob, address, phone, email, ins_policy_no) VALUES ('$health', '$name', '$DOB', '$address', '$phone', '$email', 
+					(SELECT policy_no FROM insurance WHERE policy_no = '$policy_number'))";
 
 			//Successful insertion
 			if ($conn->query($sql) == TRUE) {
