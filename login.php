@@ -43,7 +43,7 @@
 			if ($num_rows > 0){
 				echo '<font face="verdana" color="blue">Notification:</font><br><br>';
 				while ($row =$result -> fetch_assoc()){
-					echo '<a href="dismiss.php?id='.$row['id'].'">DISMISS</a>';
+					echo '<a href="dismiss.php?id='.$row['id'].'&pid='.$pid.'">DISMISS</a>';
 					echo '&nbsp;'.$row['message'];
 				}
 			}
