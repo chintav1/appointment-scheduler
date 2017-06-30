@@ -15,9 +15,10 @@
 
 			$sql = "SELECT patient_id FROM schedules WHERE employee_id='$eid' AND avalible_date = '$deldate' AND avalible_time='$deltime'";
 			$result = $conn->query($sql);
-			$row = $result->fetch_assoc();
-			$pid = $row['patient_id'];
-			if ($pid != null){
+
+			if ($result == TRUE ){
+				$row = $result->fetch_assoc();
+				$pid = $row['patient_id'];
 				$sql = "SELECT username FROM login WHERE type ='patient' AND type_id = '$pid'";
 				$result = $conn->query($sql);
 				$row = mysqli_fetch_assoc($result);
@@ -34,8 +35,6 @@
 
 
 			if ($conn->query($sql) == TRUE) {
-
-
 				echo "appointment canceled <br>";
                 echo '<a href="createschedulefront.php?pid='.$eid.'">Add new schedule</a>';
                 echo '&nbsp;&nbsp;&nbsp;&nbsp;<a href="cancelschedulefront.php?pid='.$eid.'">remove existing schedule</a>';
