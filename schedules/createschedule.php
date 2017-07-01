@@ -24,13 +24,14 @@
 			else {
 	            foreach ($timesopen as $timename) {
 
-
+					//exisitence checking
 	                if (isset($_POST[$timename])){
 	                    $time=$timename.":00:00";
 						$checking = "SELECT * FROM schedule WHERE employee_id='$eid' AND avalible_date= '$date' AND avalible_time= '$time'";
 						$result = $conn->query($checking);
 	 					if(mysqli_num_rows($result) <= 0)
 	  					{
+							//new tuple creation
 		                    $sql = "INSERT INTO schedule(employee_id,avalible_date,avalible_time) VALUES ('$eid','$date','$time')";
 							if ($conn->query($sql) == TRUE) {
 				   				echo "schedule created on '$date' at '$time' <br>";
