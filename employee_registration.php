@@ -29,35 +29,39 @@
 				echo "Fields with a * are required";
 				die();
 			}
-				$sql = " SELECT id FROM employee WHERE certification ='Manager'";
-				$result=$conn -> query($sql);
-				$row=$result->fetch_assoc();
+			
+		//Getting manager ID
+			$sql = " SELECT id FROM employee WHERE certification ='Manager'";
+			$result=$conn -> query($sql);
+			$row=$result->fetch_assoc();
 				
-				$super_id=$row['id'];
+			$super_id=$row['id'];
 
-				$sql = "INSERT INTO employee(clinic_address, clinic_phone, name, email, certification, super_id) VALUES
-						((SELECT address FROM clinic WHERE address = '$clinic_address'), (SELECT phone FROM clinic WHERE phone = '$clinic_phone'),
-						'$name', '$email', '$certificate', '$super_id')";
+		//Create new employee tuple
+			$sql = "INSERT INTO employee(clinic_address, clinic_phone, name, email, certification, super_id) VALUES
+					((SELECT address FROM clinic WHERE address = '$clinic_address'), (SELECT phone FROM clinic WHERE phone = '$clinic_phone'),
+					'$name', '$email', '$certificate', '$super_id')";
 
-				if ($conn->query($sql) == TRUE) {
-    				echo "New employee record created<br>";
-				}
+			if ($conn->query($sql) == TRUE) {
+    			echo "New employee record created<br>";
+			}
+		//Create new login tuple for employee
+			$sql1 = "SELECT id FROM employee WHERE name ='$name' AND certification = '$certificate'";
+			$result = $conn->query($sql1);
+			$row = $result->fetch_assoc();
+			$id = $row['id'];
+			$login = "INSERT INTO login(username, pass, type, type_id) VALUES ('$username', '$password', 'employee', '$id')";
 
-				$sql1 = "SELECT id FROM employee WHERE name ='$name' AND certification = '$certificate'";
-				$result = $conn->query($sql1);
-				$row = $result->fetch_assoc();
-				$id = $row['id'];
-				$login = "INSERT INTO login(username, pass, type, type_id) VALUES ('$username', '$password', 'employee', '$id')";
+			if ($conn -> query($login) == TRUE) {
+				echo "Welcome, $name<br>";
+			}
 
-				if ($conn -> query($login) == TRUE) {
-					echo "Welcome, $name<br>";
-				}
+		//Create new clinic if it does not already exist, since clinic.address is a key attribute
+			$clinic = "INSERT INTO clinic(name, address, phone, hours) VALUES ('$clinic_name', '$clinic_address', '$clinic_phone', '$clinic_hours')";
 
-				$clinic = "INSERT INTO clinic(name, address, phone, hours) VALUES ('$clinic_name', '$clinic_address', '$clinic_phone', '$clinic_hours')";
-
-				if ($conn -> query($clinic) == TRUE) {
-					echo "Clinic created successfully<br>";
-				}
+			if ($conn -> query($clinic) == TRUE) {
+				echo "Clinic created successfully<br>";
+			}
 
 
 
