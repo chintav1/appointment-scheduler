@@ -45,10 +45,10 @@
 			if ($conn->query($sql) == TRUE) {
     			echo "New employee record created<br>";
 			}
-		//Create new login tuple for employee
+		//Create new login tuple for employee by first getting their ID and inserting it along with their login information
 			$sql1 = "SELECT id FROM employee WHERE name ='$name' AND certification = '$certificate'";
 			$result = $conn->query($sql1);
-			$row = $result->fetch_assoc();
+			$row = $result->fetch_assoc(); 						//Get row with the correct ID
 			$id = $row['id'];
 			$login = "INSERT INTO login(username, pass, type, type_id) VALUES ('$username', '$password', 'employee', '$id')";
 
