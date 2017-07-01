@@ -127,6 +127,7 @@
 				</table>
 
 				<?php
+				//display yhe booked appoint of the user , allow them to cancel
 				echo "Your booked appointments: <br>";
 				$sql = "SELECT s.avalible_date, s.avalible_time, e.name, e.id FROM schedule AS s, employee AS e WHERE s.patient_id='$pid' AND s.employee_id=e.id ORDER BY s.avalible_date";
 				$result = $conn->query($sql);
@@ -151,5 +152,6 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js"></script>
 		<script src="js/jquery.stickyheader.js"></script>
+		<!-- tameplate from https://www.freshdesignweb.com/free-css-tables/ -->
 	</body>
 </html>

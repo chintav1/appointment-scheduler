@@ -13,8 +13,7 @@
 			if ($conn->connect_error) {
 				echo "Connection Error";
 			}
-
-
+//script for patient to book 
 			$sql = "UPDATE schedule SET patient_id= '$pid' WHERE employee_id='$eid' AND avalible_date='$date' AND avalible_time='$time'";
 
 			$thismonday = date('Y-m-d',strtotime('monday this week'));

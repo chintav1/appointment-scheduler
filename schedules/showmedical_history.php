@@ -12,11 +12,12 @@
             echo "Connection Error";
         }
 
+		//fetching the medical history of the patient
         $sql = "SELECT * FROM medical_history WHERE patient_id='$pid'";
         $result = mysqli_query($conn, $sql);
         $num_rows = mysqli_num_rows($result);
         if($num_rows > 0){
-
+			//display them
             echo "history of patient id '$pid' ";
             $row = $result->fetch_assoc();
             echo "allergies: ".$row['allergies'];

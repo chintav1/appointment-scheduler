@@ -4,9 +4,11 @@
 	<body>
         <?php
         $eid= $_GET['pid'];
-		
 
+		//use to display time that can be make open by the employee_id
+		
         ?>
+
 		<form action="createschedule.php" method="post">
             Create new schedules:
             <input type="hidden" name="eid" value="<?php echo $eid;?>"/><br>
