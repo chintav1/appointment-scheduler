@@ -14,7 +14,8 @@
 				echo "Connection Error";
 			}
 
-
+			//cancel booking script
+			
 			$sql = "UPDATE schedule SET patient_id= NULL WHERE employee_id='$eid' AND avalible_date='$deldate' AND avalible_time='$deltime'";
 
 

@@ -12,7 +12,7 @@
 			if ($conn->connect_error) {
 				echo "Connection Error";
 			}
-
+			//disply open time with no booking
 			$sql = "SELECT * FROM schedule WHERE employee_id='$eid' AND avalible_date = '$deldate' AND avalible_time='$deltime'";
 			$result = mysqli_query($conn, $sql);
 	        $num_rows = mysqli_num_rows($result);
@@ -30,7 +30,7 @@
 			}
 
 
-
+			//let employee deelete their booked time
 			$sql = "DELETE FROM schedule WHERE employee_id='$eid' AND avalible_date='$deldate' AND avalible_time='$deltime'";
 
 

@@ -11,7 +11,7 @@
         if ($conn->connect_error) {
             echo "Connection Error";
         }
-
+		//getting the schedules of  the denetist, and list them
         $nopatient="SELECT * FROM schedule WHERE employee_id = '$eid' AND patient_id IS NULL";
         $result = mysqli_query($conn, $nopatient);
         $num_rows = mysqli_num_rows($result);
